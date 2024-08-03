@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Move : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public PlayerStates playerStates;
     static public Vector2 InputVector2;
