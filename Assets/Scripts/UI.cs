@@ -10,11 +10,13 @@ public class UI : MonoBehaviour
 
     Text myText;
     Slider mySlider;
+    PlayerStates playerStates;
 
     void Awake()
     {
         myText = GetComponent<Text>();
         mySlider = GetComponent<Slider>();
+        playerStates = GetComponent<PlayerStates>();
     }
 
     void LateUpdate()
@@ -22,7 +24,8 @@ public class UI : MonoBehaviour
         switch (type)
         {
             case InfoType.Exp:
-
+                //float CurExp = 
+               // float MaxExp =
                 break;
             case InfoType.Level:
 

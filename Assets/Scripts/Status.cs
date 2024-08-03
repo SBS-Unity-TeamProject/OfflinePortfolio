@@ -12,6 +12,8 @@ public class Status : MonoBehaviour
     [SerializeField] TextMeshProUGUI hp;
     [SerializeField] TextMeshProUGUI movespeed;
     [SerializeField] TextMeshProUGUI armor;
+    [SerializeField] TextMeshProUGUI atkspeed;
+    [SerializeField] TextMeshProUGUI rng;
     [SerializeField] GameObject statusPanel;
 
 
@@ -31,6 +33,8 @@ public class Status : MonoBehaviour
         str.text = "STRENGTH :         " + playerStates.Strength;
         movespeed.text = "MOVE SPEED :     " + playerStates.MoveSpeed;
         armor.text = "ARMOR :               " + playerStates.Armor;
+        atkspeed.text = "ATTACK SPEED :  " + playerStates.AttackSpeed;
+        rng.text = "RANGE :                " + playerStates.Range;
 
     }
     public void Exit()
