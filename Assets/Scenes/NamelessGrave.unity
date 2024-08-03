@@ -1372,8 +1372,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a167c16b7d76e894dba9f406526c022f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statusCanvas: {fileID: 1695565120}
-  InputVector2: {x: 0, y: 0}
   speed: 5
 --- !u!95 &1600484203
 Animator:
