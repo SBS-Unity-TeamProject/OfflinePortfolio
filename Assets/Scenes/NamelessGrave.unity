@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 288969423}
   - component: {fileID: 288969422}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: SP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 415420839}
   - component: {fileID: 415420838}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: STR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 464848022}
   - component: {fileID: 464848021}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1372,6 +1372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a167c16b7d76e894dba9f406526c022f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statusCanvas: {fileID: 1695565120}
   InputVector2: {x: 0, y: 0}
   speed: 5
 --- !u!95 &1600484203
@@ -1414,7 +1415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1695565121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1510,7 +1511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e412ffdfb3cc4ed45a54dab7afe2fd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 1241080680}
   canvas: {fileID: 1695565120}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class Status : MonoBehaviour
 {
-    [SerializeField] Button button;
     [SerializeField] GameObject canvas;
     void Start()
     {
