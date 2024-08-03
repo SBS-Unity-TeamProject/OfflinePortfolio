@@ -5,8 +5,8 @@ using UnityEngine.UIElements;
 
 public class Move : MonoBehaviour
 {
+    public PlayerStates playerStates;
     static public Vector2 InputVector2;
-    public float speed = 5;
     SpriteRenderer spriter;
     //Rigidbody2D rigid;
     Animator anim;
@@ -20,15 +20,19 @@ public class Move : MonoBehaviour
 
     void Update()
     {
-        
         InputVector2.x = Input.GetAxisRaw("Horizontal");
         InputVector2.y = Input.GetAxisRaw("Vertical");
+    }
+
+    private void PlayerAttack()
+    {
+        
     }
 
 
     void FixedUpdate()
     {
-        Vector2 MoveVector2 = InputVector2.normalized * speed * Time.deltaTime;
+        Vector2 MoveVector2 = InputVector2.normalized * playerStates.MoveSpeed * Time.deltaTime;
         MoveTranslate(new Vector2(MoveVector2.x, MoveVector2.y));
     }
 

@@ -7,11 +7,16 @@ using UnityEngine.UI;
 
 public class Status : MonoBehaviour
 {
+    public PlayerStates playerStates;
     [SerializeField] TextMeshProUGUI str;
     [SerializeField] TextMeshProUGUI hp;
     [SerializeField] TextMeshProUGUI movespeed;
     [SerializeField] TextMeshProUGUI armor;
+    [SerializeField] TextMeshProUGUI atkspeed;
+    [SerializeField] TextMeshProUGUI rng;
     [SerializeField] GameObject statusPanel;
+
+
     void Start()
     {
         statusPanel.SetActive(false);
@@ -24,10 +29,12 @@ public class Status : MonoBehaviour
         {
             statusPanel.SetActive(true);
         }
-        str.text = "STRENGTH :         0";
-        hp.text = "MAX HEALTH :      0";
-        movespeed.text = "MOVE SPEED :     0";
-        armor.text = "ARMOR :               0";
+        hp.text = "MAX HEALTH :      " + playerStates.MaxHealth;
+        str.text = "STRENGTH :         " + playerStates.Strength;
+        movespeed.text = "MOVE SPEED :     " + playerStates.MoveSpeed;
+        armor.text = "ARMOR :               " + playerStates.Armor;
+        atkspeed.text = "ATTACK SPEED :  " + playerStates.AttackSpeed;
+        rng.text = "RANGE :                " + playerStates.Range;
 
     }
     public void Exit()
