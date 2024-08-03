@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class Move : MonoBehaviour
 {
     public PlayerStates playerStates;
-    static public Vector2 InputVector2;
+    public static Vector2 InputVector2;
     SpriteRenderer spriter;
     //Rigidbody2D rigid;
     Animator anim;
