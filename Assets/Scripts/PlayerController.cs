@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class PlayerController : MonoBehaviour
 {
     public PlayerStates playerStates;
-    static public Vector2 InputVector2;
+    public static Vector2 InputVector2;
     private float exp;
     private int Level;
     SpriteRenderer spriter;
