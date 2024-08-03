@@ -9,10 +9,10 @@ public class Reposition : MonoBehaviour
         if(!collision.CompareTag("Area"))
             return;
         
-        Vector3 playerPos = GameManager.Instance.player.transform.position;
-        Vector3 myPos = transform.position;
-        float diffX =Mathf.Abs(playerPos.x - myPos.x);
-        float diffY = Mathf.Abs(playerPos.x - myPos.y);
+        //Vector3 playerPos = GameManager.Instance.player.transform.position;
+        //Vector3 myPos = transform.position;
+        //float diffX =Mathf.Abs(playerPos.x - myPos.x);
+        //float diffY = Mathf.Abs(playerPos.x - myPos.y);
         // 골드메탈 영상 : 몬스터 만들기 ( 뱀서라이크 ) 17:07
     }
 }
