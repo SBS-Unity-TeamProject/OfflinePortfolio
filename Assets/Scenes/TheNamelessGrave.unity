@@ -170,9 +170,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Children: []
-  m_Father: {fileID: 1600484201}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &84885950
 GameObject:
   m_ObjectHideFlags: 0
@@ -5531,7 +5528,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1095794156}
-  - component: {fileID: 1095794157}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -5560,32 +5556,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 600, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1095794157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095794155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Tilemap
-  m_EditorClassIdentifier: 
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 0}
-  - component: {fileID: 0}
-  - component: {fileID: 0}
-  - component: {fileID: 0}
-  - component: {fileID: 0}
-  - component: {fileID: 0}
-  m_Layer: 0
-  m_TagString: Ground
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1098766214
 GameObject:
   m_ObjectHideFlags: 0
@@ -6505,14 +6475,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e412ffdfb3cc4ed45a54dab7afe2fd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStates: {fileID: 0}
-  str: {fileID: 0}
-  hp: {fileID: 0}
-  movespeed: {fileID: 0}
-  armor: {fileID: 0}
-  atkspeed: {fileID: 0}
-  rng: {fileID: 0}
-  statusPanel: {fileID: 0}
+  playerStates: {fileID: 11400000, guid: f268982532e8132438794949230356bc, type: 2}
+  str: {fileID: 415420838}
+  hp: {fileID: 464848021}
+  movespeed: {fileID: 288969422}
+  armor: {fileID: 364033495}
+  atkspeed: {fileID: 199201050}
+  rng: {fileID: 1910761653}
+  statusPanel: {fileID: 1098766214}
 --- !u!1 &1882065556
 GameObject:
   m_ObjectHideFlags: 0
