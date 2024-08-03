@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     public PlayerStates playerStates;
     public static Vector2 InputVector2;
-    static public Vector2 InputVector2;
     private float exp;
     private int Level;
     SpriteRenderer spriter;
