@@ -1051,7 +1051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1098766215
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1647,7 +1647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a167c16b7d76e894dba9f406526c022f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  playerStates: {fileID: 11400000, guid: f268982532e8132438794949230356bc, type: 2}
 --- !u!95 &1600484203
 Animator:
   serializedVersion: 5
@@ -1785,11 +1785,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e412ffdfb3cc4ed45a54dab7afe2fd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  str: {fileID: 0}
-  hp: {fileID: 0}
-  movespeed: {fileID: 0}
-  armor: {fileID: 0}
-  statusPanel: {fileID: 0}
+  playerStates: {fileID: 11400000, guid: f268982532e8132438794949230356bc, type: 2}
+  str: {fileID: 415420838}
+  hp: {fileID: 464848021}
+  movespeed: {fileID: 288969422}
+  armor: {fileID: 364033495}
+  statusPanel: {fileID: 1098766214}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
