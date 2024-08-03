@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Monster : MonoBehaviour
 {
     public float speed;
-    public Rigidbody2D target;
+    private Rigidbody2D target;
 
     bool isLive = true;
     Rigidbody2D rigid;
@@ -14,6 +16,9 @@ public class Monster : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        target = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>() ;
+
+
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
     }
