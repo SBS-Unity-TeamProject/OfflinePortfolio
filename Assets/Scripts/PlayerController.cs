@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Move : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public PlayerStates playerStates;
     public static Vector2 InputVector2;
+    static public Vector2 InputVector2;
+    private float exp;
+    private int Level;
     SpriteRenderer spriter;
     //Rigidbody2D rigid;
     Animator anim;
@@ -48,6 +51,16 @@ public class Move : MonoBehaviour
         if (InputVector2.x != 0)
         {
             spriter.flipX = InputVector2.x < 0;
+        }
+    }
+    public void GetExp()
+    {
+        exp++;
+
+        if(exp == 1)
+        {
+            Level++;
+            exp = 0;
         }
     }
 }
