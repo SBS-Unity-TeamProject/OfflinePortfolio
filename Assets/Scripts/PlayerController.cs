@@ -20,9 +20,13 @@ public class Move : MonoBehaviour
 
     void Update()
     {
-        
         InputVector2.x = Input.GetAxisRaw("Horizontal");
         InputVector2.y = Input.GetAxisRaw("Vertical");
+    }
+
+    private void PlayerAttack()
+    {
+        
     }
 
 
