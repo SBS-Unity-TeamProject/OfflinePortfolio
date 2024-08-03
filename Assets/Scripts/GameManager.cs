@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    //파일깨짐
         public Vector2 player = Move.InputVector2;
         // �̱��� ������ ����ϱ� ���� �ν��Ͻ� ����
         private static GameManager _instance;

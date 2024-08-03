@@ -7,6 +7,8 @@ public class Move : MonoBehaviour
 {
     public PlayerStates playerStates;
     static public Vector2 InputVector2;
+    private float exp;
+    private int Level;
     SpriteRenderer spriter;
     //Rigidbody2D rigid;
     Animator anim;
@@ -44,6 +46,16 @@ public class Move : MonoBehaviour
         if (InputVector2.x != 0)
         {
             spriter.flipX = InputVector2.x < 0;
+        }
+    }
+    public void GetExp()
+    {
+        exp++;
+
+        if(exp == 1)
+        {
+            Level++;
+            exp = 0;
         }
     }
 }
