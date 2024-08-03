@@ -4,22 +4,15 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    public Vector2 InputVector2;
+    static public Vector2 InputVector2;
     public float speed = 5;
     //SpriteRenderer spriter;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        InputVector2.x = Input.GetAxis("Horizontal");
-        InputVector2.y = Input.GetAxis("Vertical");
-        Vector2 MoveVector2 = InputVector2 * speed * Time.deltaTime;
+        InputVector2.x = Input.GetAxisRaw("Horizontal");
+        InputVector2.y = Input.GetAxisRaw("Vertical");
+        Vector2 MoveVector2 = InputVector2.normalized * speed * Time.deltaTime;
         MoveTranslate(new Vector2(MoveVector2.x, MoveVector2.y));
     }
 

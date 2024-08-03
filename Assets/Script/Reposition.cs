@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class Reposition : MonoBehaviour
@@ -9,7 +10,7 @@ public class Reposition : MonoBehaviour
         if(!collision.CompareTag("Area"))
             return;
         
-        Vector3 playerPos = GameManager.Instance.player.transform.position;
+        Vector3 playerPos = GameManager.Instance.player;
         Vector3 myPos = transform.position;
         float diffX =Mathf.Abs(playerPos.x - myPos.x);
         float diffY = Mathf.Abs(playerPos.x - myPos.y);
