@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PlayerStates
   m_EditorClassIdentifier: 
   Strength: 10
-  MoveSpeed: 10
+  MoveSpeed: 5
   MaxHealth: 100
   Armor: 0
