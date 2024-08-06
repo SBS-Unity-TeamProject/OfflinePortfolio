@@ -8,7 +8,6 @@ public class HealthBar : MonoBehaviour
     [SerializeField] PlayerStates playerStates;
     [SerializeField] PlayerController playerController;
     [SerializeField] Slider healthBar;
-    [SerializeField] Slider expBar;
     void Start()
     {
         healthBar.maxValue = playerStates.MaxHealth;
