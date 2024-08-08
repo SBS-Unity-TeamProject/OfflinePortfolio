@@ -7,11 +7,10 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] PlayerStates playerStates;
     public static Vector2 InputVector2;
-    private float exp;
-    private int Level;
     SpriteRenderer spriter;
     //Rigidbody2D rigid;
     Animator anim;
+    public int exp;
 
     public int currentHealth;
 
@@ -53,16 +52,6 @@ public class PlayerController : MonoBehaviour
         if (InputVector2.x != 0)
         {
             spriter.flipX = InputVector2.x < 0;
-        }
-    }
-    public void GetExp()
-    {
-        exp++;
-
-        if(exp == 1)
-        {
-            Level++;
-            exp = 0;
         }
     }
 }
