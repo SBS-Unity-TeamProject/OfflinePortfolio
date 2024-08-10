@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] PlayerStates playerStates;
+    [SerializeField] Transform Arrow;
+    PlayerController _playerController;
     public static Vector2 InputVector2;
+    private Arrow _arrow;
     private float exp;
     private int Level;
+    private float timer = 0f;
+    private float speed = 0.3f;
+    public Scanner scanner;
     SpriteRenderer spriter;
     //Rigidbody2D rigid;
     Animator anim;
@@ -21,17 +28,37 @@ public class PlayerController : MonoBehaviour
         //rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();  
         anim = GetComponent<Animator>();
+        scanner = GetComponent<Scanner>();
+        _arrow = GetComponent<Arrow>();
     }
 
     void Update()
     {
         InputVector2.x = Input.GetAxisRaw("Horizontal");
         InputVector2.y = Input.GetAxisRaw("Vertical");
+        timer += Time.deltaTime;
+        if(timer > speed)
+        {
+            timer = 0f;
+            PlayerAttack();
+        }
     }
 
     private void PlayerAttack()
     {
-        
+        if(!scanner.nearestTarget)
+        {
+            return;
+        }
+
+        Vector3 targetPos = _playerController.scanner.nearestTarget.position;
+        Vector3 dir = targetPos - transform.position;
+        dir = dir.normalized;
+
+        Transform Arrow = GameManager.Instance.transform;
+        Arrow.position = transform.position;
+        Arrow.rotation = Quaternion.FromToRotation(Vector3.up,dir);
+        Arrow.GetComponent<Arrow>().Init(_arrow.damage, _arrow.penetrate, Vector3.zero);
     }
 
 
@@ -65,4 +92,5 @@ public class PlayerController : MonoBehaviour
             exp = 0;
         }
     }
+
 }

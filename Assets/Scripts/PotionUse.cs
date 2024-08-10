@@ -11,7 +11,7 @@ public class PotionUse : MonoBehaviour
 
     void Start()
     {
-        _potionUse = GetComponent<PotionUse>();
+        _potionUse = GetComponentInParent<PotionUse>();
         HealthPotion = MaxPotion;
         ManaPotion = MaxPotion;
     }
