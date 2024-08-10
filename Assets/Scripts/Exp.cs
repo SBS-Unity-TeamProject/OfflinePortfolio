@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class Exp : MonoBehaviour
 {
-    [SerializeField] GameObject player;
     PlayerController controller;
-    [SerializeField] GameObject exp;
+    [SerializeField] MonsterExp monsterExp;
+
+    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        ExpUp();
-    }
-    public void ExpUp()
-    {
-        Debug.Log("exp");
-        //controller.exp++;
-        Destroy(exp);
+        if (collision.CompareTag("Player"))
+        {
+            controller = collision.GetComponent<PlayerController>();
+            if (controller)
+            {
+                controller.ExpUp(monsterExp.a);
+                Destroy(gameObject);
+            }
+            
+        }
     }
 }

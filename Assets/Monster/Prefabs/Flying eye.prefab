@@ -129,6 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
+  monsterExp: {fileID: 11400000, guid: 7f63d6d9a18a6c147a36bb0e03586e69, type: 2}
+  monster: {fileID: 554966187029088722}
 --- !u!70 &8928563161663137426
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
