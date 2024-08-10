@@ -19,7 +19,6 @@ public class Exp : MonoBehaviour
                 controller.ExpUp(monsterExp.a);
                 Destroy(gameObject);
             }
-            
         }
     }
 }

@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 176197581}
   - component: {fileID: 176197580}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: HPR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'HP : n+'
+  m_text: 'Health : n+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5573,6 +5573,7 @@ GameObject:
   - component: {fileID: 588310839}
   - component: {fileID: 588310838}
   - component: {fileID: 588310837}
+  - component: {fileID: 588310840}
   m_Layer: 5
   m_Name: Window2
   m_TagString: Untagged
@@ -5681,6 +5682,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588310835}
   m_CullTransparentMesh: 1
+--- !u!114 &588310840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588310835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fe9bb3adfa9f845b2869f4ae729058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStates: {fileID: 0}
+  controller: {fileID: 0}
+  MS: {fileID: 0}
+  STR: {fileID: 0}
+  MHP: {fileID: 0}
+  AR: {fileID: 0}
+  AS: {fileID: 0}
+  HPR: {fileID: 0}
 --- !u!1 &944023888
 GameObject:
   m_ObjectHideFlags: 0
@@ -5729,7 +5750,7 @@ GameObject:
   - component: {fileID: 997490076}
   - component: {fileID: 997490075}
   m_Layer: 5
-  m_Name: Text (TMP) (3)
+  m_Name: AS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5751,8 +5772,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -50}
+  m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &997490075
 MonoBehaviour:
@@ -5774,7 +5795,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 'Attack Speed : n+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5808,8 +5829,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -6126,6 +6147,7 @@ GameObject:
   - component: {fileID: 1111477295}
   - component: {fileID: 1111477294}
   - component: {fileID: 1111477293}
+  - component: {fileID: 1111477296}
   m_Layer: 5
   m_Name: Window1
   m_TagString: Untagged
@@ -6240,6 +6262,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111477291}
   m_CullTransparentMesh: 1
+--- !u!114 &1111477296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111477291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fe9bb3adfa9f845b2869f4ae729058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStates: {fileID: 11400000, guid: f268982532e8132438794949230356bc, type: 2}
+  controller: {fileID: 1600484202}
+  MS: {fileID: 2139785007}
+  STR: {fileID: 1728751330}
+  MHP: {fileID: 1778027212}
+  AR: {fileID: 1503186489}
+  AS: {fileID: 997490075}
+  HPR: {fileID: 176197580}
 --- !u!1 &1141267250
 GameObject:
   m_ObjectHideFlags: 0
@@ -6758,7 +6800,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1287963842}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1111477296}
+        m_TargetAssemblyTypeName: StatUpgradeWindow, Assembly-CSharp
+        m_MethodName: HPRClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1287963842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7103,7 +7157,7 @@ GameObject:
   - component: {fileID: 1470749551}
   - component: {fileID: 1470749550}
   m_Layer: 5
-  m_Name: Range
+  m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7223,7 +7277,7 @@ GameObject:
   - component: {fileID: 1503186490}
   - component: {fileID: 1503186489}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: AR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7245,8 +7299,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -50}
+  m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1503186489
 MonoBehaviour:
@@ -7302,8 +7356,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -7990,7 +8044,7 @@ GameObject:
   - component: {fileID: 1728751331}
   - component: {fileID: 1728751330}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: STR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8012,8 +8066,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -50}
+  m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1728751330
 MonoBehaviour:
@@ -8069,8 +8123,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -8199,7 +8253,7 @@ GameObject:
   - component: {fileID: 1778027213}
   - component: {fileID: 1778027212}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: MHP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8221,8 +8275,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -50}
+  m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1778027212
 MonoBehaviour:
@@ -8278,8 +8332,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -8454,6 +8508,7 @@ GameObject:
   - component: {fileID: 1876039448}
   - component: {fileID: 1876039447}
   - component: {fileID: 1876039446}
+  - component: {fileID: 1876039449}
   m_Layer: 5
   m_Name: Window3
   m_TagString: Untagged
@@ -8562,6 +8617,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876039444}
   m_CullTransparentMesh: 1
+--- !u!114 &1876039449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876039444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fe9bb3adfa9f845b2869f4ae729058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStates: {fileID: 0}
+  controller: {fileID: 0}
+  MS: {fileID: 0}
+  STR: {fileID: 0}
+  MHP: {fileID: 0}
+  AR: {fileID: 0}
+  AS: {fileID: 0}
+  HPR: {fileID: 0}
 --- !u!1 &1882065556
 GameObject:
   m_ObjectHideFlags: 0
@@ -8960,7 +9035,7 @@ GameObject:
   - component: {fileID: 2139785008}
   - component: {fileID: 2139785007}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8982,8 +9057,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -50}
+  m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &2139785007
 MonoBehaviour:
@@ -9039,8 +9114,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

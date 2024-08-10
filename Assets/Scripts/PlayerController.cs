@@ -6,34 +6,40 @@ using UnityEngine.UIElements;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] PlayerStates playerStates;
+    [SerializeField] public GameObject StatUPWindow;
     public static Vector2 InputVector2;
     SpriteRenderer spriter;
     //Rigidbody2D rigid;
     Animator anim;
     public int currentExp = 0;
     public int Level;
-    public int expForLevelUpp;
+    public int expForLevelUp;
+    public double defaultStatUP = 1;
+
     private void Start()
     {
         Level = 0;
-        expForLevelUpp = 0;
+        expForLevelUp = 0;
     }
     public void ExpUp(int n)
     {
         currentExp += n;
         int i = 35;
-        if (expForLevelUpp <= currentExp)
+        if (expForLevelUp <= currentExp)
         {
-            currentExp = currentExp - expForLevelUpp;
+            currentExp = currentExp - expForLevelUp;
+            StatUPWindow.SetActive(true);
             Level++;
+            defaultStatUP += 0.5;
+
             if (Level > 1)
             {
-                expForLevelUpp += i;
+                expForLevelUp += i;
                 i += 15;
             }
             else if (Level == 1)
             {
-                expForLevelUpp = 20;
+                expForLevelUp = 20;
             }
         }
     }
