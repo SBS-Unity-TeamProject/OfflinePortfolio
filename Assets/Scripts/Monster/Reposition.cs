@@ -17,35 +17,35 @@ public class Reposition : MonoBehaviour
         if (!collision.CompareTag("Area"))
             return;
 
-        //Vector3 playerPos = GameManager.Instance.player;
-        //Vector3 myPos = transform.position;
-        //float diffX = Mathf.Abs(playerPos.x - myPos.x);
-        //float diffY = Mathf.Abs(playerPos.x - myPos.y);
+        Vector3 playerPos = GameManager.Instance.player.transform.position;
+        Vector3 myPos = transform.position;
+        float diffX = Mathf.Abs(playerPos.x - myPos.x);
+        float diffY = Mathf.Abs(playerPos.x - myPos.y);
 
-        //Vector3 playerDir = GameManager.Instance.player.InputVec;
-        //float dirX = playerDir.x < 0 ? -1 : 1;
-        //float dirY = playerDir.y < 0 ? -1 : 1;
+        Vector3 playerDir = Vector3.right;
+        float dirX = playerDir.x < 0 ? -1 : 1;
+        float dirY = playerDir.y < 0 ? -1 : 1;
 
-        //switch (transform.tag)
-        //{
-        //    case "Ground":
-        //        if (diffX > diffY)
-        //        {
-        //            transform.Translate(Vector3.right * dirX * 40);
-        //        }
-        //        else if (diffX < diffY)
-        //        {
-        //            transform.Translate(Vector3.up * dirY * 40);
-        //        }
-        //        break;
-        //    case "Enemy":
-        //        if (coll.enabled)
-        //        {
-        //            transform.Translate(playerDir * 20 + new Vector3(Random.Range(-3f,3f), Random.Range(-3f, 3f),0f));
-        //        }
-        //        break;
+        switch (transform.tag)
+        {
+            case "Ground":
+                if (diffX > diffY)
+                {
+                    transform.Translate(Vector3.right * dirX * 40);
+                }
+                else if (diffX < diffY)
+                {
+                    transform.Translate(Vector3.up * dirY * 40);
+                }
+                break;
+            case "Enemy":
+                if (coll.enabled)
+                {
+                    transform.Translate(playerDir * 20 + new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 0f));
+                }
+                break;
 
-        //}
+        }
     }
 }
 

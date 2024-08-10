@@ -59,4 +59,9 @@ public class Monster : MonoBehaviour
 
         spriter.flipX = target.position.x < rigid.position.x;
     }
+
+    void OnEnable()
+    {
+        target = GameManager.Instance.player.GetComponent<Rigidbody2D>();
+    }
 }
