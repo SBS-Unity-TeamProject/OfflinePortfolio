@@ -10,7 +10,33 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriter;
     //Rigidbody2D rigid;
     Animator anim;
-    public int exp;
+    public int currentExp = 0;
+    public int Level;
+    public int expForLevelUpp;
+    private void Start()
+    {
+        Level = 0;
+        expForLevelUpp = 0;
+    }
+    public void ExpUp(int n)
+    {
+        currentExp += n;
+        int i = 35;
+        if (expForLevelUpp == currentExp)
+        {
+            currentExp = 0;
+            Level++;
+            if (Level > 1)
+            {
+                expForLevelUpp += i;
+                i += 15;
+            }
+            else if (Level == 1)
+            {
+                expForLevelUpp = 20;
+            }
+        }
+    }
 
     public int currentHealth;
 
@@ -24,6 +50,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+    
         InputVector2.x = Input.GetAxisRaw("Horizontal");
         InputVector2.y = Input.GetAxisRaw("Vertical");
     }
