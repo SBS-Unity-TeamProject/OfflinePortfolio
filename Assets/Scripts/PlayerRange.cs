@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerRange : MonoBehaviour
 {
     [SerializeField] GameObject playerRange;
-    public PlayerStates playerStates;
+    [SerializeField] PlayerStates playerStates;
     CircleCollider2D Collider;
     void Update()
     {

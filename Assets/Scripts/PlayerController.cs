@@ -5,16 +5,44 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
-    public PlayerStates playerStates;
+    [SerializeField] PlayerStates playerStates;
     public static Vector2 InputVector2;
-    private float exp;
-    private int Level;
     SpriteRenderer spriter;
     //Rigidbody2D rigid;
     Animator anim;
+    public int currentExp = 0;
+    public int Level;
+    public int expForLevelUpp;
+    private void Start()
+    {
+        Level = 0;
+        expForLevelUpp = 0;
+    }
+    public void ExpUp(int n)
+    {
+        currentExp += n;
+        int i = 35;
+        if (expForLevelUpp <= currentExp)
+        {
+            currentExp = currentExp - expForLevelUpp;
+            Level++;
+            if (Level > 1)
+            {
+                expForLevelUpp += i;
+                i += 15;
+            }
+            else if (Level == 1)
+            {
+                expForLevelUpp = 20;
+            }
+        }
+    }
+
+    public int currentHealth;
 
     void Awake()
     {
+        currentHealth = playerStates.MaxHealth;
         //rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();  
         anim = GetComponent<Animator>();
@@ -22,6 +50,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+    
         InputVector2.x = Input.GetAxisRaw("Horizontal");
         InputVector2.y = Input.GetAxisRaw("Vertical");
     }
@@ -50,16 +79,6 @@ public class PlayerController : MonoBehaviour
         if (InputVector2.x != 0)
         {
             spriter.flipX = InputVector2.x < 0;
-        }
-    }
-    public void GetExp()
-    {
-        exp++;
-
-        if(exp == 1)
-        {
-            Level++;
-            exp = 0;
         }
     }
 }
