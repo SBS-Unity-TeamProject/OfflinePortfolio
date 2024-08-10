@@ -514,6 +514,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStates: {fileID: 11400000, guid: f268982532e8132438794949230356bc, type: 2}
+  exp: 0
+  currentHealth: 0
 --- !u!95 &1600484203
 Animator:
   serializedVersion: 5
