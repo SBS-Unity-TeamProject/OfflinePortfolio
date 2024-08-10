@@ -11,5 +11,16 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+
+        Initialize();
+    }
+
+    protected void Initialize()
+    {
+        GameObject obj = GameObject.FindWithTag("Player");
+        if (obj)
+        {
+            player = obj.GetComponent<PlayerController>();
+        }
     }
 }
