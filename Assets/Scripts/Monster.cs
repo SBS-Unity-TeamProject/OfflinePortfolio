@@ -19,15 +19,15 @@ public class Monster : MonoBehaviour
     {
         if (monster.CompareTag("Mob"))
         {
-
+            
         }
-        else
+        else if (monster.CompareTag("Boss"))
         {
 
         }
     }
 
-    // Start is called before the first frame update
+
     void Awake()
     {
         target = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>() ;
