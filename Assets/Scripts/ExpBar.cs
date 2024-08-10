@@ -9,12 +9,13 @@ public class ExpBar : MonoBehaviour
     [SerializeField] PlayerController playerController;
     void Start()
     {
-        expBar.maxValue = playerController.expForLevelUpp;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        expBar.maxValue = playerController.expForLevelUpp;
         expBar.value = playerController.currentExp;
     }
 }

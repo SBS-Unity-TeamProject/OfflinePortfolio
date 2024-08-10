@@ -22,9 +22,9 @@ public class PlayerController : MonoBehaviour
     {
         currentExp += n;
         int i = 35;
-        if (expForLevelUpp == currentExp)
+        if (expForLevelUpp <= currentExp)
         {
-            currentExp = 0;
+            currentExp = currentExp - expForLevelUpp;
             Level++;
             if (Level > 1)
             {

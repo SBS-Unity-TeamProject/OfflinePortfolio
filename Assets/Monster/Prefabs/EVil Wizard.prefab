@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9025576425973982624}
   - component: {fileID: 6809240155044652337}
   m_Layer: 0
-  m_Name: EVil Wizard
+  m_Name: Evil Wizard
   m_TagString: Mob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.5
   monsterExp: {fileID: 11400000, guid: 7f63d6d9a18a6c147a36bb0e03586e69, type: 2}
+  monster: {fileID: 3051998868940958214}
 --- !u!70 &2250491432623164602
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

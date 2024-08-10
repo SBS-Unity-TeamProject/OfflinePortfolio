@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b620c399640f7b74db915b133d1a39a2, type: 3}
   m_Name: MonsterExp
   m_EditorClassIdentifier: 
-  a: 0
+  a: 5

@@ -9,10 +9,23 @@ public class Monster : MonoBehaviour
     public float speed;
     private Rigidbody2D target;
     [SerializeField] MonsterExp monsterExp;
+    [SerializeField] GameObject monster;
 
     bool isLive = true;
     Rigidbody2D rigid;
     SpriteRenderer spriter;
+
+    private void Update()
+    {
+        if (monster.CompareTag("Mob"))
+        {
+
+        }
+        else
+        {
+
+        }
+    }
 
     // Start is called before the first frame update
     void Awake()
