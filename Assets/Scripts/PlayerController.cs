@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public int currentExp = 0;
     public int Level;
     public int expForLevelUp;
-    public double defaultStatUP = 1;
+    public float defaultStatUP = 1;
 
     private void Start()
     {
@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
             currentExp = currentExp - expForLevelUp;
             StatUPWindow.SetActive(true);
             Level++;
-            defaultStatUP += 0.5;
+            defaultStatUP += 0.5f;
 
             if (Level > 1)
             {
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        currentHealth = playerStates.MaxHealth;
+        currentHealth = ((int)playerStates.MaxHealth);
         //rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();  
         anim = GetComponent<Animator>();

@@ -22,42 +22,46 @@ public class StatUpgradeWindow : MonoBehaviour
     void Update()
     {
 
-        MS.text = "Move Speed : " + (controller.defaultStatUP / 5);
-        STR.text = "Strength : " + (controller.defaultStatUP * 5);
-        MHP.text = "Max Health : " + (controller.defaultStatUP * 30);
-        AR.text = "Attack Range" + (controller.defaultStatUP / 10);
-        AS.text = "Attack Speed : " + (controller.defaultStatUP / 10);
+        MS.text = "Move Speed : " + (controller.defaultStatUP / 5) + "+";
+        STR.text = "Strength : " + (controller.defaultStatUP * 5) + "+";
+        MHP.text = "Max Health : " + (controller.defaultStatUP * 30) + "+";
+        AR.text = "Attack Range" + (controller.defaultStatUP / 10) + "+";
+        AS.text = "Attack Speed : " + (controller.defaultStatUP / 10) + "+";
         HPR.text = "HealthRecovery";     
     }
 
     public void MSClick()
     {
         controller.StatUPWindow.SetActive(false);
+        playerStates.MoveSpeed += (controller.defaultStatUP/5);
     }
 
     public void STRClick()
     {
         controller.StatUPWindow.SetActive(false);
-
+        playerStates.Strength += (controller.defaultStatUP);
     }
     public void MHPClick()
     {
         controller.StatUPWindow.SetActive(false);
+        playerStates.MaxHealth += (controller.defaultStatUP * 30);
 
     }
     public void ARClick()
     {
         controller.StatUPWindow.SetActive(false);
+        playerStates.Range += (controller.defaultStatUP / 10);
 
     }
     public void ASClick()
     {
         controller.StatUPWindow.SetActive(false);
+        playerStates.AttackSpeed += (controller.defaultStatUP/10);
 
     }
     public void HPRClick()
     {
         controller.StatUPWindow.SetActive(false);
-        controller.currentHealth = playerStates.MaxHealth;
+        controller.currentHealth = ((int)playerStates.MaxHealth);
     }
 }
