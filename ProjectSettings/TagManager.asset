@@ -7,6 +7,9 @@ TagManager:
   - Ground
   - Area
   - Exp
+  - PlayerExpRange
+  - Mob
+  - Boss
   layers:
   - Default
   - TransparentFX
