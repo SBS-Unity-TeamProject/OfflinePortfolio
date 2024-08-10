@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Status : MonoBehaviour
 {
-    public PlayerStates playerStates;
+    [SerializeField] PlayerStates playerStates;
     [SerializeField] TextMeshProUGUI str;
     [SerializeField] TextMeshProUGUI hp;
     [SerializeField] TextMeshProUGUI movespeed;
