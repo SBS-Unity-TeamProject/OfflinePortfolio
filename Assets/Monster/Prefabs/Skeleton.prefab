@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6662137489478332867}
   m_Layer: 0
   m_Name: Skeleton
-  m_TagString: Untagged
+  m_TagString: Mob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
+  monsterExp: {fileID: 11400000, guid: 7f63d6d9a18a6c147a36bb0e03586e69, type: 2}
 --- !u!70 &7228867502202100392
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

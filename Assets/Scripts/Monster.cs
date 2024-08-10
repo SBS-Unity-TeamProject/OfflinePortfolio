@@ -8,6 +8,7 @@ public class Monster : MonoBehaviour
 {
     public float speed;
     private Rigidbody2D target;
+    [SerializeField] MonsterExp monsterExp;
 
     bool isLive = true;
     Rigidbody2D rigid;
