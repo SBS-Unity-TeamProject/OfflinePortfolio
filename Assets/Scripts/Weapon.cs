@@ -10,7 +10,8 @@ public class Weapon : MonoBehaviour
     public float speed = 0.3f;
     public Scanner scanner;
     public int Level = 1;
-    [SerializeField] Transform arrow;
+    public GameObject Garrow;
+    [SerializeField] Transform Tarrow;
     Rigidbody2D rigid;
     float timer;
 
@@ -42,24 +43,24 @@ public class Weapon : MonoBehaviour
 
     void Fire()
     {
-        //arrow = GameManager.Instance.transform;
-        //arrow.parent = transform;
-        arrow.localPosition = Vector3.zero;
-        arrow.localRotation = Quaternion.identity;
-        Vector3 rotVec = Vector3.forward * 360 / count;
-        arrow.Rotate(rotVec);
-        arrow.Translate(arrow.up * 1.5f, Space.World);
         if(!scanner.nearestTarget)
         {
             //arrow.position = transform.position;
             return;
         }
+        //arrow = GameManager.Instance.transform;
+        //arrow.parent = transform;
+        Tarrow.localPosition = Vector3.zero;
+        Tarrow.localRotation = Quaternion.identity;
+        Vector3 rotVec = Vector3.forward * 360 / count;
+        Tarrow.Rotate(rotVec);
+        Tarrow.Translate(Tarrow.up * speed*Time.deltaTime, Space.World);
         Vector3 targetPos = scanner.nearestTarget.position;
         Vector3 dir = targetPos - transform.position;
-        dir = dir.normalized;
-        arrow.position = transform.position;
-        arrow.rotation = Quaternion.FromToRotation(Vector3.up, dir);
-
+        dir = dir.normalized * speed * Time.deltaTime;
+        Tarrow.position = transform.position;
+        Tarrow.rotation = Quaternion.FromToRotation(Vector3.up, dir);
+        Instantiate(Garrow,Tarrow);
     }
 
     void OnTriggerEnter2D(Collider2D collision)

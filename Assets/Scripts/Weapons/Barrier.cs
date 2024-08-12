@@ -17,7 +17,7 @@ public class Barrier : MonoBehaviour
         Damageable damageable = collision.GetComponent<Damageable>();
         if (damageable)
         {
-            damageable.GetHit(120);
+            damageable.GetHit(10);
         }
     }
 
