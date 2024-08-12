@@ -8,8 +8,6 @@ public class Scanner : MonoBehaviour
     public LayerMask targetLayer;
     public RaycastHit2D[] targets;
     public Transform nearestTarget;
-    PlayerController _playerController;
-    Scanner _scanner;
 
     void FixedUpdate()
     {

@@ -122,7 +122,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &242646273
+--- !u!1 &349769782
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 242646274}
+  - component: {fileID: 349769783}
   m_Layer: 6
   m_Name: ArrowPos
   m_TagString: Untagged
@@ -138,13 +138,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &242646274
+--- !u!4 &349769783
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242646273}
+  m_GameObject: {fileID: 349769782}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -282,6 +282,25 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   nearestTarget: {fileID: 0}
+--- !u!114 &1600484218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642321330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528ee3e5096ffa14a821347321ac92c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  count: 1
+  speed: 0.3
+  scanner: {fileID: 1600484210}
+  Level: 1
+  Garrow: {fileID: 9046724838853183292, guid: 2f6898c1ed2344e4aa730eb7f56c12bf, type: 3}
+  Tarrow: {fileID: 349769783}
 --- !u!1 &2036059168
 GameObject:
   m_ObjectHideFlags: 0
@@ -4616,7 +4635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2776241064286027179, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4299905077059148013, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
       propertyPath: StatUPWindow
@@ -4624,7 +4643,7 @@ PrefabInstance:
       objectReference: {fileID: 642321330}
     - target: {fileID: 4420557689123598635, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
       propertyPath: _health
-      value: 10000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4420557689123598635, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
       propertyPath: m_Enabled
@@ -4632,7 +4651,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4420557689123598635, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
       propertyPath: _maxHealth
-      value: 10000
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420557689123598635, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
+      propertyPath: isInvincible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5652730362289047830, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5652730362289047830, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
       propertyPath: Garrow
@@ -4641,7 +4668,11 @@ PrefabInstance:
     - target: {fileID: 5652730362289047830, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
       propertyPath: Tarrow
       value: 
-      objectReference: {fileID: 242646274}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5652730362289047830, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5652730362289047830, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
       propertyPath: scanner
       value: 
@@ -4707,16 +4738,22 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 2409564562666397639, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
+    - {fileID: 5652730362289047830, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5846504435865533708, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 242646274}
+      addedObject: {fileID: 349769783}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 187398991836793815, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
       insertIndex: 4
       addedObject: {fileID: 1600484210}
+    - targetCorrespondingSourceObject: {fileID: 187398991836793815, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1600484218}
   m_SourcePrefab: {fileID: 100100000, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
