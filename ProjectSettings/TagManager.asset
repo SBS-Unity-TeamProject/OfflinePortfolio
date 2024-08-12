@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Ground
   - Area
+  - Exp
+  - PlayerExpRange
+  - Mob
+  - Boss
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -14,7 +19,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
+  - Exp
   - 
   - 
   - 
@@ -40,6 +45,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3924621789
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
