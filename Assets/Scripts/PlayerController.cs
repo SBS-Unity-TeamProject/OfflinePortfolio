@@ -11,10 +11,12 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriter;
     //Rigidbody2D rigid;
     Animator anim;
+    
     public int currentExp = 0;
     public int Level;
     public int expForLevelUp;
     public float defaultStatUP = 1;
+
 
     private void Start()
     {
