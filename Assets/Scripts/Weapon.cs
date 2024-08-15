@@ -7,11 +7,12 @@ public class Weapon : MonoBehaviour
 {
     public float damage = 1;
     public int count = 1;
-    public float speed = 0.3f;
+    public float rate = 0.3f;
+    public float speed = 10f;
     public Scanner scanner;
     public int Level = 1;
-    public GameObject Garrow;
-    [SerializeField] Transform Tarrow;
+    public Arrow arrow;
+    public Transform Tplayer;
     float timer;
 
     void Awake()
@@ -22,7 +23,7 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer > speed)
+        if(timer > rate)
         {
             timer = 0f;
             Fire();
@@ -37,19 +38,10 @@ public class Weapon : MonoBehaviour
             return;
         }
         Vector3 targetPos = scanner.nearestTarget.position;
-        Vector3 dir = targetPos - transform.position;
+        Vector3 dir = targetPos - Tplayer.transform.position;
         dir = dir.normalized;
-        Tarrow.position = transform.position;
-        Tarrow.rotation = Quaternion.FromToRotation(Vector3.up, dir);
-        Instantiate(Garrow,Tarrow);
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(!collision.CompareTag("Enemy"))
-        {
-            return;
-        }
-        Garrow.SetActive(false);
+        //arrow.gameObject.transform.position = transform.position * speed*Time.deltaTime;
+        Instantiate(arrow,dir * speed * Time.deltaTime,Quaternion.FromToRotation(Vector3.up, dir));
+        //arrow.transform.Translate(transform.position * speed * Time.deltaTime);
     }
 }
