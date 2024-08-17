@@ -33,6 +33,7 @@ public class Monster : MonoBehaviour
     Rigidbody2D rigid;
     Animator anim;
     SpriteRenderer spriter;
+    WaitForFixedUpdate wait;
 
     private void Update()
     {
@@ -48,6 +49,7 @@ public class Monster : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriter = GetComponent<SpriteRenderer>();
+        wait = new WaitForFixedUpdate();
     }
 
     private void FixedUpdate()
@@ -65,7 +67,7 @@ public class Monster : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!isLive)
+        if (!isLive || anim.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
         {
             return;
         }
@@ -85,6 +87,38 @@ public class Monster : MonoBehaviour
         speed = data.speed;
         maxHealth = data.health;
         health = data.health;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.CompareTag("Bullet"))
+            return;
+
+        health -= collision.GetComponent<Bullet>().damage;
+        StartCoroutine(KnockBack());
+
+        if(health > 0)
+        {
+            anim.SetTrigger("Hit");
+        }
+
+        else
+        {
+            Dead();
+        }
+    }
+
+    IEnumerator KnockBack()
+    {
+        yield return wait; // 1프레임 쉬기
+        Vector3 PlayerPos = GameManager.Instance.player.transform.position;
+        Vector3 dirVec = transform.position - PlayerPos;
+        rigid.AddForce(dirVec.normalized * 3, ForceMode2D.Impulse);
+    }
+
+    void Dead()
+    {
+        gameObject.SetActive(false);
     }
 
     public void OnDeath()
