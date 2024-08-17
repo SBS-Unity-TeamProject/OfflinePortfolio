@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 9025576425973982624}
   - component: {fileID: 6809240155044652337}
   - component: {fileID: 5605072008898235429}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EVil Wizard
-  m_TagString: Mob
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,7 +212,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c05f9e0284c4874b8b6a0a7dd9b0c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStates: {fileID: 0}
-  health: 0
-  maxHealth: 0
-  isAlive: 0
+  damageableHit:
+    m_PersistentCalls:
+      m_Calls: []
+  damageableDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  _maxHealth: 1
+  _health: 1
+  _isAlive: 1
+  isInvincible: 0
+  invincibilityTime: 0.25

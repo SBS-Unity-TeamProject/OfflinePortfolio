@@ -10,7 +10,7 @@ public class HealthBar : MonoBehaviour
     [SerializeField] Slider healthBar;
     void Start()
     {
-        healthBar.maxValue = playerStates.MaxHealth;
+        healthBar.maxValue = ((int)playerStates.MaxHealth);
     }
 
     // Update is called once per frame
