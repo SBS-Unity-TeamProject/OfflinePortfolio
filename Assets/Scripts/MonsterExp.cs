@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu (fileName = "MonsterExp", menuName = "MonsterStatus/Exp", order = 2)]
 public class MonsterExp : ScriptableObject
 {
+    public int a = 1;
     public int EvilWizard1;
     public int EvilWizard2;
     public int EvilWizard3;
