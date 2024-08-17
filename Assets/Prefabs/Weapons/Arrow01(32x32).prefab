@@ -161,6 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae565c8becaabb4a9bd0374cdebed58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStates: {fileID: 11400000, guid: f268982532e8132438794949230356bc, type: 2}
   damage: 3
-  penetrate: 3
-  speed: 10
+  scanner: {fileID: 0}
