@@ -2,17 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static Spawmer;
 using static UnityEngine.GraphicsBuffer;
 
 public class Monster : MonoBehaviour
 {
     public float speed;
+    public float health;
+    public float maxHealth;
+    public RuntimeAnimatorController[] animCon;
     private Rigidbody2D target;
+
     [SerializeField] MonsterExp monsterExp;
     [SerializeField] GameObject monster;
 
-    bool isLive = true;
+    bool isLive;
+
     Rigidbody2D rigid;
+    Animator anim;
     SpriteRenderer spriter;
 
     private void Update()
@@ -34,6 +41,7 @@ public class Monster : MonoBehaviour
 
 
         rigid = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         spriter = GetComponent<SpriteRenderer>();
     }
 
@@ -63,5 +71,15 @@ public class Monster : MonoBehaviour
     void OnEnable()
     {
         target = GameManager.Instance.player.GetComponent<Rigidbody2D>();
+        isLive = true;
+        health = maxHealth;
+    }
+
+    public void Init(SpawnData data)
+    {
+        anim.runtimeAnimatorController = animCon[data.spriteType];
+        speed = data.speed;
+        maxHealth = data.health;
+        health = data.health;
     }
 }

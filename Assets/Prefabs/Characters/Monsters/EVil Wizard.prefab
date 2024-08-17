@@ -15,10 +15,9 @@ GameObject:
   - component: {fileID: 2250491432623164602}
   - component: {fileID: 9025576425973982624}
   - component: {fileID: 6809240155044652337}
-  - component: {fileID: 5605072008898235429}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EVil Wizard
-  m_TagString: Mob
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,6 +129,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
+  health: 15
+  maxHealth: 15
+  animCon:
+  - {fileID: 9100000, guid: 17416659cc086114ba98756fe74c76f2, type: 2}
+  - {fileID: 9100000, guid: 4f230fa6acf87ff4aa55a06a9691101d, type: 2}
+  - {fileID: 9100000, guid: 739240ec3c850bd449c1aae3fd751554, type: 2}
+  - {fileID: 9100000, guid: 7052c8b4bb06f644ea75e62b72afedbd, type: 2}
+  - {fileID: 9100000, guid: 6db71a80ec2350e499d4f5b7b7c373f6, type: 2}
+  - {fileID: 9100000, guid: 1eb99d836a3c82f45b8d6b08092debb5, type: 2}
+  - {fileID: 9100000, guid: 89abbda68d8fc2243bfdb272f3d5cce5, type: 2}
+  - {fileID: 9100000, guid: 059ee3c7cb0b10e4da6fd0105ded0a02, type: 2}
+  - {fileID: 9100000, guid: 48ae617445a83e64eb9520cec6bf84c6, type: 2}
+  - {fileID: 9100000, guid: 4f6fccd708afd8446b750eec3e30188d, type: 2}
   monsterExp: {fileID: 11400000, guid: 7f63d6d9a18a6c147a36bb0e03586e69, type: 2}
   monster: {fileID: 3051998868940958214}
 --- !u!70 &2250491432623164602
@@ -200,19 +212,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5605072008898235429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3051998868940958214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c05f9e0284c4874b8b6a0a7dd9b0c44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerStates: {fileID: 0}
-  health: 0
-  maxHealth: 0
-  isAlive: 0
