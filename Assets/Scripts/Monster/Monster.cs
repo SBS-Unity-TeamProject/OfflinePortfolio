@@ -35,6 +35,7 @@ public class Monster : MonoBehaviour
     SpriteRenderer spriter;
     WaitForFixedUpdate wait;
     Stage stage;
+    private float r;
     private void Update()
     {
         
@@ -44,7 +45,7 @@ public class Monster : MonoBehaviour
     void Awake()
     {
         target = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>() ;
-
+        r = Random.Range(0.01f, 100f);
 
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -128,6 +129,7 @@ public class Monster : MonoBehaviour
     {
         newExp = Instantiate(Exp, transform.position, Quaternion.identity);
         Exp exp = newExp.GetComponent<Exp>();
+        DropItem();
         //경험치/보스는 경험치 5배
         if (monster.name == "FlyingEye")
         {
@@ -136,7 +138,7 @@ public class Monster : MonoBehaviour
                 exp.Init(monsterExp.FlyingEye * 5);
                 stage.timerOn = true;
             }
-            exp.Init(monsterExp.FlyingEye);
+            else { exp.Init(monsterExp.FlyingEye); }
         }
         else if (monster.name == "Goblin")
         {
@@ -161,7 +163,7 @@ public class Monster : MonoBehaviour
                 exp.Init(monsterExp.EvilWizard2 * 5);
                 stage.timerOn = true;
             }
-            exp.Init(monsterExp.EvilWizard2);
+            else { exp.Init(monsterExp.EvilWizard2); }
         }
         else if (monster.name == "EvilWizard3")
         {
@@ -182,10 +184,84 @@ public class Monster : MonoBehaviour
                 exp.Init(monsterExp.MartialHero * 5);
                 stage.timerOn = true;
             }
-            exp.Init(monsterExp.MartialHero);
+            else { exp.Init(monsterExp.MartialHero); }
 
         }
 
         Destroy(monster);
     }
+
+    private void Rand()
+    {
+        r = Random.Range(0.01f, 100f);
+    }
+    private void DropItem()
+    {
+        int ItemCount = 0;
+        Rand();
+        if (ItemCount <= 3)
+        {
+            if (r <= 1.65f)
+            {
+                Instantiate(BanditArmor, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+                ItemCount++;
+            }
+            else if (r > 1.65f && r <= 3.3f)
+            {
+                Instantiate(BanditBoots, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+                ItemCount++;
+            }
+            else if (r > 3.3f && r <= 5)
+            {
+                Instantiate(BanditGloves, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+                ItemCount++;
+            }
+        }
+        else if (ItemCount <= 6 && ItemCount > 3)
+        {
+            if (r <= 1.25f)
+            {
+                Instantiate(BattleGuardArmor, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+                ItemCount++;
+            }
+            else if (r > 1.25f && r <= 2.5f)
+            {
+                Instantiate(BattleGuardBoots, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+                ItemCount++;
+            }
+            else if (r > 2.5f && r <= 3.75)
+            {
+                Instantiate(BattleGuardGloves, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+                ItemCount++;
+            }
+            else if (r > 3.75f && r<= 5f)
+            {
+                Instantiate(BattleGuardHelm, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+                ItemCount++;
+            }
+        }
+        else if (ItemCount > 6 && ItemCount <= 9)
+        {
+            if (r <= 1.65f)
+            {
+                Instantiate(GreyKnightArmor, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+                ItemCount++;
+            }
+            else if (r > 1.65f && r <= 3.3f)
+            {
+                Instantiate(GreyKnightBoots, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+                ItemCount++;
+            }
+            else if (r > 3.3f && r <= 5)
+            {
+                Instantiate(GreyKnightGloves, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+                ItemCount++;
+            }
+        }
+        else
+        {
+
+        }
+    }
+
 }
