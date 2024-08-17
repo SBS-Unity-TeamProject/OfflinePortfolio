@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -12,7 +13,8 @@ public class Monster : MonoBehaviour
     [SerializeField] MonsterExp monsterExp;
     public bool isBoss = false;
     [SerializeField] GameObject Exp;
-
+    GameObject newExp;
+    GameObject newExpScript;
     bool isLive = true;
     Rigidbody2D rigid;
     SpriteRenderer spriter;
@@ -35,9 +37,8 @@ public class Monster : MonoBehaviour
     private void FixedUpdate()
     {
         if (!isLive)
-        {
-            Destroy(monster);
-            Instantiate(Exp, transform.position, Quaternion.identity);
+        { 
+
             return;
         }
 
@@ -51,15 +52,70 @@ public class Monster : MonoBehaviour
     {
         if (!isLive)
         {
-
             return;
         }
-
         spriter.flipX = target.position.x < rigid.position.x;
     }
 
     void OnEnable()
     {
         target = GameManager.Instance.player.GetComponent<Rigidbody2D>();
+    }
+
+    public void OnDeath()
+    {
+        newExp = Instantiate(Exp, transform.position, Quaternion.identity);
+        Exp exp = newExp.GetComponent<Exp>();
+        if (monster.name == "FlyingEye")
+        {
+            exp.Init(monsterExp.FlyingEye);
+        }
+        else if (monster.name == "Goblin")
+        {
+            exp.Init(monsterExp.Goblin);
+
+        }
+        else if (monster.name == "Mushroom")
+        {
+            exp.Init(monsterExp.Mushroom);
+
+        }
+        else if (monster.name == "Skeleton")
+        {
+            exp.Init(monsterExp.Skeleton);
+
+        }
+        else if (monster.name == "EvilWizard1")
+        {
+            exp.Init(monsterExp.EvilWizard1);
+
+        }
+        else if (monster.name == "EvilWizard2")
+        {
+            exp.Init(monsterExp.EvilWizard2);
+
+        }
+        else if (monster.name == "EvilWizard3")
+        {
+            exp.Init(monsterExp.EvilWizard3);
+
+        }
+        else if (monster.name == "HeroKnight1")
+        {
+            exp.Init(monsterExp.HeroKnight1);
+
+        }
+        else if (monster.name == "HeroKnight2")
+        {
+            exp.Init(monsterExp.HeroKnight2);
+
+        }
+        else if (monster.name == "MartialHero")
+        {
+            exp.Init(monsterExp.MartialHero);
+
+        }
+
+        Destroy(monster);
     }
 }
