@@ -473,6 +473,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Exp (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2121999219660526983, guid: 29abdb598e5cea843bd5c1aa21906e8a, type: 3}
+      propertyPath: ExpAmount
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5825382090896230837, guid: 29abdb598e5cea843bd5c1aa21906e8a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.14
@@ -822,6 +826,10 @@ PrefabInstance:
     - target: {fileID: 1562141443601111899, guid: 29abdb598e5cea843bd5c1aa21906e8a, type: 3}
       propertyPath: m_Name
       value: Exp (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121999219660526983, guid: 29abdb598e5cea843bd5c1aa21906e8a, type: 3}
+      propertyPath: ExpAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5825382090896230837, guid: 29abdb598e5cea843bd5c1aa21906e8a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1178,6 +1186,10 @@ PrefabInstance:
     - target: {fileID: 1562141443601111899, guid: 29abdb598e5cea843bd5c1aa21906e8a, type: 3}
       propertyPath: m_Name
       value: Exp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121999219660526983, guid: 29abdb598e5cea843bd5c1aa21906e8a, type: 3}
+      propertyPath: ExpAmount
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5825382090896230837, guid: 29abdb598e5cea843bd5c1aa21906e8a, type: 3}
       propertyPath: m_LocalPosition.x
