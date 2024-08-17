@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using static Spawmer;
 using static UnityEngine.GraphicsBuffer;
@@ -11,6 +12,7 @@ public class Monster : MonoBehaviour
     public float health;
     public float maxHealth;
     public RuntimeAnimatorController[] animCon;
+    [SerializeField] GameObject monster;
     private Rigidbody2D target;
 
     [SerializeField] MonsterExp monsterExp;
@@ -18,20 +20,18 @@ public class Monster : MonoBehaviour
 
     bool isLive;
 
+    public bool isBoss = false;
+    [SerializeField] GameObject Exp;
+    GameObject newExp;
+    GameObject newExpScript;
+    bool isLive = true;
     Rigidbody2D rigid;
     Animator anim;
     SpriteRenderer spriter;
 
     private void Update()
     {
-        if (monster.CompareTag("Mob"))
-        {
-            
-        }
-        else if (monster.CompareTag("Boss"))
-        {
-
-        }
+        
     }
 
 
@@ -48,7 +48,8 @@ public class Monster : MonoBehaviour
     private void FixedUpdate()
     {
         if (!isLive)
-        {
+        { 
+
             return;
         }
 
@@ -64,7 +65,6 @@ public class Monster : MonoBehaviour
         {
             return;
         }
-
         spriter.flipX = target.position.x < rigid.position.x;
     }
 
@@ -81,5 +81,62 @@ public class Monster : MonoBehaviour
         speed = data.speed;
         maxHealth = data.health;
         health = data.health;
+    }
+
+    public void OnDeath()
+    {
+        newExp = Instantiate(Exp, transform.position, Quaternion.identity);
+        Exp exp = newExp.GetComponent<Exp>();
+        if (monster.name == "FlyingEye")
+        {
+            exp.Init(monsterExp.FlyingEye);
+        }
+        else if (monster.name == "Goblin")
+        {
+            exp.Init(monsterExp.Goblin);
+
+        }
+        else if (monster.name == "Mushroom")
+        {
+            exp.Init(monsterExp.Mushroom);
+
+        }
+        else if (monster.name == "Skeleton")
+        {
+            exp.Init(monsterExp.Skeleton);
+
+        }
+        else if (monster.name == "EvilWizard1")
+        {
+            exp.Init(monsterExp.EvilWizard1);
+
+        }
+        else if (monster.name == "EvilWizard2")
+        {
+            exp.Init(monsterExp.EvilWizard2);
+
+        }
+        else if (monster.name == "EvilWizard3")
+        {
+            exp.Init(monsterExp.EvilWizard3);
+
+        }
+        else if (monster.name == "HeroKnight1")
+        {
+            exp.Init(monsterExp.HeroKnight1);
+
+        }
+        else if (monster.name == "HeroKnight2")
+        {
+            exp.Init(monsterExp.HeroKnight2);
+
+        }
+        else if (monster.name == "MartialHero")
+        {
+            exp.Init(monsterExp.MartialHero);
+
+        }
+
+        Destroy(monster);
     }
 }

@@ -12,4 +12,5 @@ public class PlayerStates : ScriptableObject
     public float Armor = 0;
     public float Range = 2f;
     public float AttackSpeed = 1f;
+
 }

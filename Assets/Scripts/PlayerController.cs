@@ -22,7 +22,13 @@ public class PlayerController : MonoBehaviour
     {
         Level = 0;
         expForLevelUp = 0;
-    }
+        playerStates.Strength = 10;
+        playerStates.MoveSpeed = 5;
+        playerStates.MaxHealth = 100;
+        playerStates.Armor = 0;
+        playerStates.Range = 2f;
+        playerStates.AttackSpeed = 1f;
+}
     public void ExpUp(int n)
     {
         currentExp += n;
@@ -32,12 +38,13 @@ public class PlayerController : MonoBehaviour
             currentExp = currentExp - expForLevelUp;
             StatUPWindow.SetActive(true);
             Level++;
-            defaultStatUP += 0.5f;
+
 
             if (Level > 1)
             {
                 expForLevelUp += i;
                 i += 15;
+                defaultStatUP += 0.5f;
             }
             else if (Level == 1)
             {
