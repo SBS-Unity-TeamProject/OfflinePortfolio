@@ -76,14 +76,14 @@ public class Monster : MonoBehaviour
 
     void OnEnable()
     {
-        target = GameManager.Instance.player.GetComponent<Rigidbody2D>();
+        //target = GameManager.Instance.player.GetComponent<Rigidbody2D>();
         isLive = true;
         health = maxHealth;
     }
 
     public void Init(SpawnData data)
     {
-        anim.runtimeAnimatorController = animCon[data.spriteType];
+        //anim.runtimeAnimatorController = animCon[data.spriteType];
         speed = data.speed;
         maxHealth = data.health;
         health = data.health;
