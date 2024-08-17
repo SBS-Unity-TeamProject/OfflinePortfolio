@@ -34,7 +34,6 @@ public class WeaponLauncher : MonoBehaviour
     {
         if(!scanner.nearestTarget)
         {
-            //Tarrow.position = transform.position;
             return;
         }
         
