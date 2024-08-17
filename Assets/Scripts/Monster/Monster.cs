@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using static Spawmer;
+using static Spawner;
 using static UnityEngine.GraphicsBuffer;
 
 public class Monster : MonoBehaviour
@@ -21,14 +21,11 @@ public class Monster : MonoBehaviour
 
     public bool isBoss = false;
     [SerializeField] GameObject Exp;
-    [SerializeField] GameObject
+    [SerializeField]
+    GameObject
         BanditGloves, BanditBoots, BanditArmor,
         BattleGuardHelm, BattleGuardGloves, BattleGuardBoots, BattleGuardArmor,
-        DarkMountainHelm, DarkMountainGloves, DarkMountainBoots, DarkMountainArmor,
-        GreyKnightGloves, GreyKnightBoots, GreyKnightArmor,
-        ManticoreHelm, ManticoreGloves, ManticoreBoots, ManticoreArmor,
-        AllStatsArmor, ArmorHelm, AttackHelm, SpeedHelm,
-        ScoutHelm, ScoutGloves, ScoutBoots, ScoutArmor;
+        GreyKnightGloves, GreyKnightBoots, GreyKnightArmor;
     GameObject newExp;
     GameObject newExpScript;
 
