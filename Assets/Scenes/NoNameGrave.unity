@@ -4516,6 +4516,10 @@ PrefabInstance:
       propertyPath: pool
       value: 
       objectReference: {fileID: 1485103407}
+    - target: {fileID: 5483699722473169974, guid: 1b337f9c8b405f846ac27aed13ccb00f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 8766662869877102522}
     - target: {fileID: 6181633466904074077, guid: 1b337f9c8b405f846ac27aed13ccb00f, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -4756,6 +4760,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1600484218}
   m_SourcePrefab: {fileID: 100100000, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
+--- !u!114 &8766662869877102522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4299905077059148013, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
+  m_PrefabInstance: {fileID: 8766662869877102521}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642321330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a167c16b7d76e894dba9f406526c022f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
