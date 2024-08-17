@@ -34,7 +34,7 @@ public class Monster : MonoBehaviour
     Animator anim;
     SpriteRenderer spriter;
     WaitForFixedUpdate wait;
-
+    Stage stage;
     private void Update()
     {
         
@@ -84,7 +84,14 @@ public class Monster : MonoBehaviour
     public void Init(SpawnData data)
     {
         //anim.runtimeAnimatorController = animCon[data.spriteType];
-        speed = data.speed;
+        if (!isBoss)
+        {
+            speed = data.speed;
+        }
+        else if (isBoss)
+        {
+            speed = data.speed / 10 * 7;
+        }
         maxHealth = data.health;
         health = data.health;
     }
@@ -104,7 +111,7 @@ public class Monster : MonoBehaviour
 
         else
         {
-            Dead();
+            OnDeath();
         }
     }
 
@@ -116,10 +123,6 @@ public class Monster : MonoBehaviour
         rigid.AddForce(dirVec.normalized * 3, ForceMode2D.Impulse);
     }
 
-    void Dead()
-    {
-        gameObject.SetActive(false);
-    }
 
     public void OnDeath()
     {
@@ -131,6 +134,7 @@ public class Monster : MonoBehaviour
             if (isBoss)
             {
                 exp.Init(monsterExp.FlyingEye * 5);
+                stage.timerOn = true;
             }
             exp.Init(monsterExp.FlyingEye);
         }
@@ -155,6 +159,7 @@ public class Monster : MonoBehaviour
             if (isBoss)
             {
                 exp.Init(monsterExp.EvilWizard2 * 5);
+                stage.timerOn = true;
             }
             exp.Init(monsterExp.EvilWizard2);
         }
@@ -175,6 +180,7 @@ public class Monster : MonoBehaviour
             if (isBoss)
             {
                 exp.Init(monsterExp.MartialHero * 5);
+                stage.timerOn = true;
             }
             exp.Init(monsterExp.MartialHero);
 
