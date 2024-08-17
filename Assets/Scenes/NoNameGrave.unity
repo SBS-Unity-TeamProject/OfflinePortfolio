@@ -296,10 +296,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   count: 1
-  rate: 1
+  rate: 0.5
   speed: 1
   scanner: {fileID: 1600484210}
-  Level: 1
   arrow: {fileID: 7659758100441673493, guid: ff7b7db2d1e4fc145aa5c870b89c5515, type: 3}
   arrowpos: {fileID: 349769783}
 --- !u!1 &2036059168

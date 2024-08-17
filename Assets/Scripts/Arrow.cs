@@ -7,7 +7,8 @@ public class Arrow : MonoBehaviour
 {
     public int damage = 10;
     public Scanner scanner;
-    public Vector2 moveSpeed = new Vector2(1, 0);
+    public Vector2 dir = Vector2.zero;
+    public Vector2 moveSpeed = new Vector2(1f, 1f);
     //public Vector2 knockback = Vector2.zero;
     Rigidbody2D rb;
 
@@ -19,6 +20,10 @@ public class Arrow : MonoBehaviour
     private void Start()
     {
         rb.velocity = new Vector2(moveSpeed.x * transform.localScale.x, moveSpeed.y * transform.localScale.y);
+        //for(int i = 1; i < 9; i++)
+        //{
+        //    rb.velocity = new Vector2(moveSpeed.x * 45*i, moveSpeed.y * 45*i);
+        //}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

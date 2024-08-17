@@ -45,13 +45,13 @@ public class WeaponLauncher : MonoBehaviour
         GameObject projectile = Instantiate(arrow, arrowpos.position, arrow.transform.rotation);
         Vector3 originScale = projectile.transform.localScale;
 
-        float valuex = transform.localScale.x > 0 ? 1 : -1;
-        float valuey = transform.localScale.y > 0 ? 1 : -1;
+        float valuex = scanner.nearestTarget.position.x;
+        float valuey = scanner.nearestTarget.position.y;
         projectile.transform.localScale = new Vector3
         {
             x = originScale.x * valuex,
             y = originScale.y * valuey,
-            z = originScale.z,
+            z = originScale.z
         };
 
     }
