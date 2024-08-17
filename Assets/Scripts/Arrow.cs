@@ -7,7 +7,8 @@ public class Arrow : MonoBehaviour
 {
     public int damage = 10;
     public Scanner scanner;
-    public Vector2 dir = Vector2.zero;
+    //public Vector2 dir = Vector2.zero;
+    public PlayerStates playerStates;
     public Vector2 moveSpeed = new Vector2(1f, 1f);
     //public Vector2 knockback = Vector2.zero;
     Rigidbody2D rb;
@@ -15,14 +16,15 @@ public class Arrow : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        //playerStates = GetComponent<PlayerStates>();   
     }
 
     private void Start()
     {
         rb.velocity = new Vector2(moveSpeed.x * transform.localScale.x, moveSpeed.y * transform.localScale.y);
-        //for(int i = 1; i < 9; i++)
+        //for (int i = 1; i < 9; i++)
         //{
-        //    rb.velocity = new Vector2(moveSpeed.x * 45*i, moveSpeed.y * 45*i);
+        //    rb.velocity = new Vector2(moveSpeed.x * 45 * i, moveSpeed.y * 45 * i);
         //}
     }
 
@@ -33,10 +35,13 @@ public class Arrow : MonoBehaviour
         {
             //Vector2 deliveredKnockback = transform.localScale.x > 0 ? knockback : new Vector2(-knockback.x, -knockback.y);
             //TODO : 현재 공격하는 캐릭터가 바라보는 방향으로 vector2 설정
-            bool gotHit = damageable.GetHit(damage);
-            if (collision.CompareTag("Enemy") && gotHit)
+            if (collision.CompareTag("Enemy"))
             {
-                Destroy(this.gameObject);
+                bool gotHit = damageable.GetHit(damage);
+                if(gotHit)
+                {
+                    Destroy(this.gameObject);
+                }
             }
         }
 
