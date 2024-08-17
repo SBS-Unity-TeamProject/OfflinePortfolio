@@ -9,7 +9,7 @@ public class Monster : MonoBehaviour
     public float speed;
     private Rigidbody2D target;
     [SerializeField] MonsterExp monsterExp;
-    [SerializeField] GameObject monster;
+    public bool isBoss = false;
 
     bool isLive = true;
     Rigidbody2D rigid;
@@ -17,14 +17,7 @@ public class Monster : MonoBehaviour
 
     private void Update()
     {
-        if (monster.CompareTag("Mob"))
-        {
-            
-        }
-        else if (monster.CompareTag("Boss"))
-        {
-
-        }
+        
     }
 
 
