@@ -37,22 +37,22 @@ public class WeaponLauncher : MonoBehaviour
             //Tarrow.position = transform.position;
             return;
         }
-        //Vector3 targetPos = scanner.nearestTarget.position;
-        //Vector3 dir = targetPos - arrowpos.transform.position;
-        //dir = dir.normalized;
+        
         //arrow.transform.position = arrow.transform.position * speed*Time.deltaTime;
         //Instantiate(arrow,dir * speed * Time.deltaTime,Quaternion.FromToRotation(Vector3.up, dir));
         //arrow.transform.Translate(arrow.transform.position * speed * Time.deltaTime);
+        //디버깅 해서 무슨값인지 찾기
+        Debug.Log(arrowpos.position);
         GameObject projectile = Instantiate(arrow, arrowpos.position, arrow.transform.rotation);
-        Vector3 originScale = projectile.transform.localScale;
+        //Vector3 originScale = projectile.transform.localScale;
 
-        float valuex = scanner.nearestTarget.position.x;
-        float valuey = scanner.nearestTarget.position.y;
-        projectile.transform.localScale = new Vector2
-        {
-            x = originScale.x * valuex,
-            y = originScale.y * valuey,
-        };
+        //float valuex = scanner.nearestTarget.position.x;
+        //float valuey = scanner.nearestTarget.position.y;
+        //projectile.transform.position = new Vector2
+        //{
+        //    x = dir.x,
+        //    y = dir.y,
+        //};
 
     }
 }

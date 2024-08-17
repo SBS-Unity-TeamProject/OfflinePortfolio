@@ -294,6 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528ee3e5096ffa14a821347321ac92c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStates: {fileID: 11400000, guid: f268982532e8132438794949230356bc, type: 2}
   count: 1
   rate: 1
   speed: 10

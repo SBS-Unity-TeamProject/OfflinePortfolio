@@ -8,6 +8,7 @@ public class Arrow : MonoBehaviour
     [SerializeField] PlayerStates playerStates;
     public int damage = 10;
     public Scanner scanner;
+    public Transform arrowpos;
     //public Vector2 dir = Vector2.zero;
     //public Vector2 moveSpeed = new Vector2(1f, 1f);
     //public Vector2 knockback = Vector2.zero;
@@ -16,14 +17,19 @@ public class Arrow : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        //scanner = GetComponent<Scanner>();
         //playerStates = GetComponent<PlayerStates>();   
     }
 
     private void Start()
     {
+        //Debug.Log(scanner.nearestTarget.position);
+        //Vector3 targetPos = scanner.nearestTarget.position;
+        //Vector3 dir = targetPos - arrowpos.position;
+        //dir = dir.normalized;
         rb.velocity = new Vector2(
-            playerStates.MoveSpeed * transform.localScale.x, 
-            playerStates.MoveSpeed * transform.localScale.y);
+            (playerStates.MoveSpeed/5), 
+            (playerStates.MoveSpeed/5));
         //for (int i = 1; i < 9; i++)
         //{
         //    rb.velocity = new Vector2(moveSpeed.x * 45 * i, moveSpeed.y * 45 * i);
