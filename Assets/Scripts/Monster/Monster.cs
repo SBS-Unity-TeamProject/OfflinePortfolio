@@ -49,7 +49,6 @@ public class Monster : MonoBehaviour
     {
         if (!isLive)
         { 
-
             return;
         }
 
