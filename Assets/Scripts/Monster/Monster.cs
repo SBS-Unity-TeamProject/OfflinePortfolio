@@ -16,7 +16,6 @@ public class Monster : MonoBehaviour
     private Rigidbody2D target;
 
     [SerializeField] MonsterExp monsterExp;
-    [SerializeField] GameObject _monster;
 
     bool _isLive;
 
@@ -50,7 +49,6 @@ public class Monster : MonoBehaviour
     {
         if (!isLive)
         { 
-
             return;
         }
 
@@ -88,56 +86,61 @@ public class Monster : MonoBehaviour
     {
         newExp = Instantiate(Exp, transform.position, Quaternion.identity);
         Exp exp = newExp.GetComponent<Exp>();
-        if (_monster.name == "FlyingEye")
+        //경험치/보스는 경험치 5배
+        if (monster.name == "FlyingEye")
         {
+            if (isBoss)
+            {
+                exp.Init(monsterExp.FlyingEye * 5);
+            }
             exp.Init(monsterExp.FlyingEye);
         }
-        else if (_monster.name == "Goblin")
+        else if (monster.name == "Goblin")
         {
             exp.Init(monsterExp.Goblin);
-
         }
-        else if (_monster.name == "Mushroom")
+        else if (monster.name == "Mushroom")
         {
             exp.Init(monsterExp.Mushroom);
-
         }
-        else if (_monster.name == "Skeleton")
+        else if (monster.name == "Skeleton")
         {
             exp.Init(monsterExp.Skeleton);
-
         }
-        else if (_monster.name == "EvilWizard1")
+        else if (monster.name == "EvilWizard1")
         {
             exp.Init(monsterExp.EvilWizard1);
-
         }
-        else if (_monster.name == "EvilWizard2")
+        else if (monster.name == "EvilWizard2")
         {
+            if (isBoss)
+            {
+                exp.Init(monsterExp.EvilWizard2 * 5);
+            }
             exp.Init(monsterExp.EvilWizard2);
-
         }
-        else if (_monster.name == "EvilWizard3")
+        else if (monster.name == "EvilWizard3")
         {
             exp.Init(monsterExp.EvilWizard3);
-
         }
-        else if (_monster.name == "HeroKnight1")
+        else if (monster.name == "HeroKnight1")
         {
             exp.Init(monsterExp.HeroKnight1);
-
         }
-        else if (_monster.name == "HeroKnight2")
+        else if (monster.name == "HeroKnight2")
         {
             exp.Init(monsterExp.HeroKnight2);
-
         }
-        else if (_monster.name == "MartialHero")
+        else if (monster.name == "MartialHero")
         {
+            if (isBoss)
+            {
+                exp.Init(monsterExp.MartialHero * 5);
+            }
             exp.Init(monsterExp.MartialHero);
 
         }
 
-        Destroy(_monster);
+        Destroy(monster);
     }
 }
