@@ -805,6 +805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 920cda8d6e93bb6488b6722c11ecf00c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameTime: 0
+  maxGameTime: 10
   pool: {fileID: 0}
   player: {fileID: 1600484202}
 --- !u!222 &1886244024

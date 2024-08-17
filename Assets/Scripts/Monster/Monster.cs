@@ -21,6 +21,14 @@ public class Monster : MonoBehaviour
 
     public bool isBoss = false;
     [SerializeField] GameObject Exp;
+    [SerializeField] GameObject
+        BanditGloves, BanditBoots, BanditArmor,
+        BattleGuardHelm, BattleGuardGloves, BattleGuardBoots, BattleGuardArmor,
+        DarkMountainHelm, DarkMountainGloves, DarkMountainBoots, DarkMountainArmor,
+        GreyKnightGloves, GreyKnightBoots, GreyKnightArmor,
+        ManticoreHelm, ManticoreGloves, ManticoreBoots, ManticoreArmor,
+        AllStatsArmor, ArmorHelm, AttackHelm, SpeedHelm,
+        ScoutHelm, ScoutGloves, ScoutBoots, ScoutArmor;
     GameObject newExp;
     GameObject newExpScript;
 

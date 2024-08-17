@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2174127958833273224}
   - component: {fileID: 6323384982321204075}
   m_Layer: 0
-  m_Name: BattleguardArmor - Copy - Copy
+  m_Name: BattleguardGloves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

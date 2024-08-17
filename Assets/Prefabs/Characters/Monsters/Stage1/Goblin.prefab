@@ -130,10 +130,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
+  health: 0
+  maxHealth: 0
+  animCon: []
   monster: {fileID: 575383168099063231}
   monsterExp: {fileID: 11400000, guid: 7f63d6d9a18a6c147a36bb0e03586e69, type: 2}
   isBoss: 0
   Exp: {fileID: 1562141443601111899, guid: 29abdb598e5cea843bd5c1aa21906e8a, type: 3}
+  BanditGloves: {fileID: 5537209387649340177, guid: 4b060fd07d1583e418ef3c4b3e413b60, type: 3}
+  BanditBoots: {fileID: 6722155525886937988, guid: 60a7a7633b414c847a3b07a3bd524342, type: 3}
+  BanditArmor: {fileID: 1394185540238380401, guid: d15895b6f01a54649847c410ca499a40, type: 3}
+  BattleGuardHelm: {fileID: 3405633899832736684, guid: 3933e5de3ae3f91409c86b86e96d65b2, type: 3}
+  BattleGuardGloves: {fileID: 7842518826030657600, guid: 10d8ab46045cf4e449bf688600612871, type: 3}
+  BattleGuardBoots: {fileID: 4069296970376985498, guid: 90fb5dfb0e0f2ff40999d62efc1f8c08, type: 3}
+  BattleGuardArmor: {fileID: 1725542241204102347, guid: 72162f02e24802844acc67af4b6ab181, type: 3}
+  DarkMountainHelm: {fileID: 9218848056375599744, guid: 7a39787f131e3ca4084a577a572bdf1f, type: 3}
+  DarkMountainGloves: {fileID: 5576116126851244351, guid: b500931e0793a374685b42bf5f56be67, type: 3}
+  DarkMountainBoots: {fileID: 6323128435315368163, guid: 5310486538da4874eb045e1eeb3c269d, type: 3}
+  DarkMountainArmor: {fileID: 7669730759054380892, guid: d2e1c8273ef00a649b3cb46347588d54, type: 3}
+  GreyKnightGloves: {fileID: 1750861041972083171, guid: c6e49fdef09e4254597fd1e63fd36e45, type: 3}
+  GreyKnightBoots: {fileID: 800163380586856599, guid: 5bd501ccf52ff714e96c15880568bbd3, type: 3}
+  GreyKnightArmor: {fileID: 4560479854120830253, guid: 15671bac57659af439e1a67048d8aa1e, type: 3}
+  ManticoreHelm: {fileID: 6712676300816016316, guid: 5196289cca682fe41b01d75487c8cc19, type: 3}
+  ManticoreGloves: {fileID: 1646391048316636134, guid: 7f7f7e5a07dcd5c4c91cf8313d3feae6, type: 3}
+  ManticoreBoots: {fileID: 6543739709781446410, guid: b648a0f85c9fcf543a17dd630c583643, type: 3}
+  ManticoreArmor: {fileID: 1578654751502299154, guid: 48a55bc32c4839c4a8ee7d3576052bef, type: 3}
+  AllStatsArmor: {fileID: 2517837533050135178, guid: 8b6c96ad1ecff404d972df143ba37d18, type: 3}
+  ArmorHelm: {fileID: 505391115218027985, guid: 85f1c89507ad142489d2002c0851e93d, type: 3}
+  AttackHelm: {fileID: 3443767519863551279, guid: 645a566a90c83de44b53d929c36e9dd0, type: 3}
+  SpeedHelm: {fileID: 4674501528353881483, guid: 7b9b52584814bba42821a9653ae7e201, type: 3}
+  ScoutHelm: {fileID: 7003257014155661616, guid: fe4c6494336222246beb32e81d94ea55, type: 3}
+  ScoutGloves: {fileID: 6360174355276434199, guid: b007577310132cb44919e947693c80fe, type: 3}
+  ScoutBoots: {fileID: 11757773463169540, guid: c99868114307b6347a9e5e66fff99ea7, type: 3}
+  ScoutArmor: {fileID: 4974171480371551205, guid: 87854951e7f83684eb2bbb71f10d40ea, type: 3}
 --- !u!70 &5247837899847019033
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
