@@ -5,7 +5,7 @@ using UnityEngine.Analytics;
 
 public class WeaponLauncher : MonoBehaviour
 {
-    public float damage = 1;
+    [SerializeField] PlayerStates playerStates;
     public int count = 1;
     public float rate = 0.3f;
     public float speed = 1f;
@@ -21,6 +21,7 @@ public class WeaponLauncher : MonoBehaviour
 
     void Update()
     {
+        //일정 시간후에 발사
         timer += Time.deltaTime;
         if(timer > rate)
         {
@@ -47,11 +48,10 @@ public class WeaponLauncher : MonoBehaviour
 
         float valuex = scanner.nearestTarget.position.x;
         float valuey = scanner.nearestTarget.position.y;
-        projectile.transform.localScale = new Vector3
+        projectile.transform.localScale = new Vector2
         {
             x = originScale.x * valuex,
             y = originScale.y * valuey,
-            z = originScale.z
         };
 
     }

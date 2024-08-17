@@ -5,7 +5,9 @@ using UnityEngine;
 public class Spawmer : MonoBehaviour
 {
     public Transform[] spawnPoint;
+    public SpawnData[] spawnDatas;
 
+    int level;
     float timer;
 
     void Awake()
@@ -17,8 +19,8 @@ public class Spawmer : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-
-        if(timer > 0.2f) 
+        level = Mathf.Min(Mathf.FloorToInt(GameManager.Instance.gameTime / 10f), spawnDatas.Length - 1);
+        if (timer > spawnDatas[level].spawnTime) 
         {
             timer = 0;
             Spawn();
@@ -28,7 +30,17 @@ public class Spawmer : MonoBehaviour
 
     void Spawn()
     {
-        GameObject Monster = GameManager.Instance.pool.Get(Random.Range(0, 2));
+        GameObject Monster = GameManager.Instance.pool.Get(0);
         Monster.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
+        Monster.GetComponent<Monster>().Init(spawnDatas[level]);
+    }
+
+    [System.Serializable]
+    public class SpawnData
+    {
+        public int spriteType;
+        public float spawnTime;
+        public int health;
+        public float speed;
     }
 }

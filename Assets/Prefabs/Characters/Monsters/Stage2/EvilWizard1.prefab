@@ -15,9 +15,8 @@ GameObject:
   - component: {fileID: 2250491432623164602}
   - component: {fileID: 9025576425973982624}
   - component: {fileID: 6809240155044652337}
-  - component: {fileID: 5605072008898235429}
   m_Layer: 3
-  m_Name: EvilWizard1
+  m_Name: EVil Wizard
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,10 +129,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
-  monster: {fileID: 3051998868940958214}
+  health: 15
+  maxHealth: 15
+  animCon:
+  - {fileID: 9100000, guid: 17416659cc086114ba98756fe74c76f2, type: 2}
+  - {fileID: 9100000, guid: 4f230fa6acf87ff4aa55a06a9691101d, type: 2}
+  - {fileID: 9100000, guid: 739240ec3c850bd449c1aae3fd751554, type: 2}
+  - {fileID: 9100000, guid: 7052c8b4bb06f644ea75e62b72afedbd, type: 2}
+  - {fileID: 9100000, guid: 6db71a80ec2350e499d4f5b7b7c373f6, type: 2}
+  - {fileID: 9100000, guid: 1eb99d836a3c82f45b8d6b08092debb5, type: 2}
+  - {fileID: 9100000, guid: 89abbda68d8fc2243bfdb272f3d5cce5, type: 2}
+  - {fileID: 9100000, guid: 059ee3c7cb0b10e4da6fd0105ded0a02, type: 2}
+  - {fileID: 9100000, guid: 48ae617445a83e64eb9520cec6bf84c6, type: 2}
+  - {fileID: 9100000, guid: 4f6fccd708afd8446b750eec3e30188d, type: 2}
   monsterExp: {fileID: 11400000, guid: 7f63d6d9a18a6c147a36bb0e03586e69, type: 2}
-  isBoss: 0
-  Exp: {fileID: 1562141443601111899, guid: 29abdb598e5cea843bd5c1aa21906e8a, type: 3}
+  monster: {fileID: 3051998868940958214}
 --- !u!70 &2250491432623164602
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
