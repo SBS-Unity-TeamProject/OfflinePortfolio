@@ -5,7 +5,7 @@ using UnityEngine.Analytics;
 
 public class WeaponLauncher : MonoBehaviour
 {
-    public float damage = 1;
+    [SerializeField] PlayerStates playerStates;
     public int count = 1;
     public float rate = 0.3f;
     public float speed = 1f;

@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
+    [SerializeField] PlayerStates playerStates;
     public int damage = 10;
     public Scanner scanner;
     //public Vector2 dir = Vector2.zero;
-    public PlayerStates playerStates;
-    public Vector2 moveSpeed = new Vector2(1f, 1f);
+    //public Vector2 moveSpeed = new Vector2(1f, 1f);
     //public Vector2 knockback = Vector2.zero;
     Rigidbody2D rb;
 
@@ -21,7 +21,9 @@ public class Arrow : MonoBehaviour
 
     private void Start()
     {
-        rb.velocity = new Vector2(moveSpeed.x * transform.localScale.x, moveSpeed.y * transform.localScale.y);
+        rb.velocity = new Vector2(
+            playerStates.MoveSpeed * transform.localScale.x, 
+            playerStates.MoveSpeed * transform.localScale.y);
         //for (int i = 1; i < 9; i++)
         //{
         //    rb.velocity = new Vector2(moveSpeed.x * 45 * i, moveSpeed.y * 45 * i);
