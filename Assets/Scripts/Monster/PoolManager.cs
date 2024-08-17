@@ -17,7 +17,7 @@ public class PoolManager : MonoBehaviour
         for (int index = 0; index < pools.Length; index++)
         {
             pools[index] = new List<GameObject>();
-        }
+        }   
     }
 
     public GameObject Get(int index)
@@ -25,7 +25,7 @@ public class PoolManager : MonoBehaviour
         GameObject select = null;
 
         // 선택한 풀의 놀고 있는( 비활성화된 ) 게임오브젝트에 접근
-        foreach(GameObject item in pools[index])
+        foreach(GameObject item  in pools[index])
         {
             if(!item.activeSelf)
             {
