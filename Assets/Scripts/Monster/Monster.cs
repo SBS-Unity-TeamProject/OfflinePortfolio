@@ -7,9 +7,11 @@ using static UnityEngine.GraphicsBuffer;
 public class Monster : MonoBehaviour
 {
     public float speed;
+    [SerializeField] GameObject monster;
     private Rigidbody2D target;
     [SerializeField] MonsterExp monsterExp;
     public bool isBoss = false;
+    [SerializeField] GameObject Exp;
 
     bool isLive = true;
     Rigidbody2D rigid;
@@ -34,6 +36,8 @@ public class Monster : MonoBehaviour
     {
         if (!isLive)
         {
+            Destroy(monster);
+            Instantiate(Exp, transform.position, Quaternion.identity);
             return;
         }
 
@@ -47,6 +51,7 @@ public class Monster : MonoBehaviour
     {
         if (!isLive)
         {
+
             return;
         }
 

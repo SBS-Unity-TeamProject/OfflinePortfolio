@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Exp : MonoBehaviour
@@ -7,7 +8,6 @@ public class Exp : MonoBehaviour
     PlayerController controller;
     [SerializeField] MonsterExp monsterExp;
 
-    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
