@@ -12,7 +12,7 @@ public class Weapon : MonoBehaviour
     public Scanner scanner;
     public int Level = 1;
     public Arrow arrow;
-    public Transform Tplayer;
+    public Transform arrowpos;
     float timer;
 
     void Awake()
@@ -38,7 +38,7 @@ public class Weapon : MonoBehaviour
             return;
         }
         Vector3 targetPos = scanner.nearestTarget.position;
-        Vector3 dir = targetPos - Tplayer.transform.position;
+        Vector3 dir = targetPos - arrowpos.transform.position;
         dir = dir.normalized;
         //arrow.gameObject.transform.position = transform.position * speed*Time.deltaTime;
         Instantiate(arrow,dir * speed * Time.deltaTime,Quaternion.FromToRotation(Vector3.up, dir));

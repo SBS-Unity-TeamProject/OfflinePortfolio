@@ -301,7 +301,7 @@ MonoBehaviour:
   scanner: {fileID: 1600484210}
   Level: 1
   arrow: {fileID: 5763947053728019455, guid: ff7b7db2d1e4fc145aa5c870b89c5515, type: 3}
-  Tplayer: {fileID: 1600484201}
+  arrowpos: {fileID: 349769783}
 --- !u!1 &2036059168
 GameObject:
   m_ObjectHideFlags: 0
