@@ -123,6 +123,6 @@ public class Damageable : MonoBehaviour
 
     public void Death()
     {
-        this.gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }

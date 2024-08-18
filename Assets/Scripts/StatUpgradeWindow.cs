@@ -23,9 +23,17 @@ public class StatUpgradeWindow : MonoBehaviour
     [SerializeField] GameObject AR2;
     [SerializeField] GameObject AS2;
     [SerializeField] GameObject HPR2;
+
+    private int r;
+
+    private void random()
+    {
+        r = Random.Range(1, 6);
+    }
+
     void Start()
     {
-        
+        random();
     }
 
 
@@ -36,13 +44,15 @@ public class StatUpgradeWindow : MonoBehaviour
         MS.text = "Move Speed : " + (controller.defaultStatUP / 5) + "+";
         STR.text = "Strength : " + (controller.defaultStatUP * 5) + "+";
         MHP.text = "Max Health : " + (controller.defaultStatUP * 30) + "+";
-        AR.text = "Attack Range" + (controller.defaultStatUP / 10) + "+";
+        AR.text = "Attack Range : " + (controller.defaultStatUP / 10) + "+";
         AS.text = "Attack Speed : " + (controller.defaultStatUP / 10) + "+";
         HPR.text = "HealthRecovery";
         if (Panel)
         {
-            switch (3)
+            switch (r)
             {
+                default:
+                    break;
                 case 1:
                     MS2.SetActive(true); break;
                 case 2:
@@ -63,34 +73,37 @@ public class StatUpgradeWindow : MonoBehaviour
     {
         controller.StatUPWindow.SetActive(false);
         playerStates.MoveSpeed += (controller.defaultStatUP/5);
+        random();
     }
 
     public void STRClick()
     {
         controller.StatUPWindow.SetActive(false);
-        playerStates.Strength += (controller.defaultStatUP);
+        playerStates.Strength += (controller.defaultStatUP * 5);
+        random();
     }
     public void MHPClick()
     {
         controller.StatUPWindow.SetActive(false);
         playerStates.MaxHealth += (controller.defaultStatUP * 30);
-
+        random();
     }
     public void ARClick()
     {
         controller.StatUPWindow.SetActive(false);
         playerStates.Range += (controller.defaultStatUP / 10);
-
+        random();
     }
     public void ASClick()
     {
         controller.StatUPWindow.SetActive(false);
         playerStates.AttackSpeed += (controller.defaultStatUP/10);
-
+        random();
     }
     public void HPRClick()
     {
         controller.StatUPWindow.SetActive(false);
         controller.currentHealth = (int)playerStates.MaxHealth;
+        random();
     }
 }
