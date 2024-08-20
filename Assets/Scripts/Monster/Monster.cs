@@ -130,7 +130,7 @@ public class Monster : MonoBehaviour
         newExp = Instantiate(Exp, transform.position, Quaternion.identity);
         Exp exp = newExp.GetComponent<Exp>();
         DropItem();
-        //경험치/보스는 경험치 5배
+        //보스는 경험치 5배
         if (monster.name == "FlyingEye")
         {
             if (isBoss)
