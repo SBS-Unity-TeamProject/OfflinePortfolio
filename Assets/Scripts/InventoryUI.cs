@@ -1,30 +1,84 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-    [SerializeField] public GameObject inventoryPanel_I;
-    [SerializeField] public GameObject inventoryPanel_K;
-    bool activeInventory_I = false;
-    bool activeInventory_K = false;
-
+    [SerializeField] GameObject InventoryPanel;
+    [SerializeField]
+    GameObject
+        ArmorPanel, RingsPanel, BowPanel;
+    [SerializeField]
+    Toggle
+        ArmorToggle, RingsToggle, BowToggle;
     private void Start()
     {
-        inventoryPanel_I.SetActive(activeInventory_I);
-        inventoryPanel_K.SetActive(activeInventory_K);
+        ArmorToggle.isOn = true;
+        RingsToggle.isOn = false;
+        BowToggle.isOn = false;
+
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.I))
+        if (ArmorToggle.isOn)
         {
-            activeInventory_I = !activeInventory_I;
-            inventoryPanel_I.SetActive(activeInventory_I);
+            RingsToggle.isOn = false;
+            BowToggle.isOn = false;
         }
-        if(Input.GetKeyDown(KeyCode.K))
+        else if (BowToggle.isOn)
         {
-            activeInventory_K = !activeInventory_K;
-            inventoryPanel_K.SetActive(activeInventory_K);
+            ArmorToggle.isOn = false;
+            RingsToggle.isOn = false;
+        }
+        else if (RingsToggle.isOn)
+        {
+            ArmorToggle.isOn = false;
+            BowToggle .isOn = false;
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (!InventoryPanel)
+            {
+                InventoryPanel.SetActive(true);
+            }
+            else
+            {
+                InventoryPanel.SetActive(false);
+            }
+        }
+    }
+    public void ArmorToggleValueChanged()
+    {
+        if (ArmorToggle.isOn)
+        {
+            ArmorPanel.SetActive(true);
+        }
+        else
+        {
+            ArmorPanel.SetActive(false);
+        }
+    }
+    public void RingsToggleValueChanged()
+    {
+        if (RingsToggle.isOn)
+        {
+            RingsPanel.SetActive(true);
+        }
+        else
+        {
+            RingsPanel.SetActive(false);
+        }
+    }
+    public void BowsToggleValueChanged()
+    {
+        if (BowToggle.isOn)
+        {
+            BowPanel.SetActive(true);
+        }
+        else
+        {
+            BowPanel.SetActive(false);
         }
     }
 }
