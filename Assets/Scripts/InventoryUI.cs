@@ -5,80 +5,311 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-    [SerializeField] GameObject InventoryPanel;
+    [SerializeField] public GameObject InventoryPanel;
+    [SerializeField] public GameObject InvenLeftPanel;
     [SerializeField]
     GameObject
         ArmorPanel, RingsPanel, BowPanel;
     [SerializeField]
-    Toggle
-        ArmorToggle, RingsToggle, BowToggle;
+    Button
+        aButton, rButton, bButton;
+    [SerializeField]
+    Button
+        ArmorButton, ArmorButton1, ArmorButton2, ArmorButton3, ArmorButton4, ArmorButton5, ArmorButton6, ArmorButton7, ArmorButton8, ArmorButton9;
+    [SerializeField]
+    GameObject
+        Panel, Panel1, Panel2, Panel3, Panel4, Panel5, Panel6, Panel7, Panel8, Panel9;
+    [SerializeField] Button Select;
+    Monster monster;
     private void Start()
     {
-        ArmorToggle.isOn = true;
-        RingsToggle.isOn = false;
-        BowToggle.isOn = false;
-
+        ArmorPanel.SetActive(true);
+        RingsPanel.SetActive(false);
+        BowPanel.SetActive(false);
     }
     private void Update()
     {
-        if (ArmorToggle.isOn)
+    }
+    public void ArmorValueChanged()
+    {
+        ArmorPanel.SetActive(true);
+        RingsPanel.SetActive(false);
+        BowPanel.SetActive(false);
+    }
+    public void RingsValueChanged()
+    {
+        ArmorPanel.SetActive(false);
+        RingsPanel.SetActive(true);
+        BowPanel.SetActive(false);
+    }
+    public void BowsValueChanged()
+    {
+        ArmorPanel.SetActive(false);
+        RingsPanel.SetActive(false);
+        BowPanel.SetActive(true);
+    }
+    public void AB()
+    {
+        Panel.SetActive(true);
+        Panel1.SetActive(false);
+        Panel2.SetActive(false);
+        Panel3.SetActive(false);
+        Panel4.SetActive(false);
+        Panel5.SetActive(false);
+        Panel6.SetActive(false);
+        Panel7.SetActive(false);
+        Panel8.SetActive(false);
+        Panel9.SetActive(false);
+    }
+    public void AB1()
+    {
+        Panel.SetActive(false);
+        Panel2.SetActive(false);
+        Panel3.SetActive(false);
+        Panel4.SetActive(false);
+        Panel5.SetActive(false);
+        Panel6.SetActive(false);
+        Panel7.SetActive(false);
+        Panel8.SetActive(false);
+        Panel9.SetActive(false);
+        Panel1.SetActive(true);
+    }
+    public void AB2()
+    {
+        Panel.SetActive(false);
+        Panel1.SetActive(false);
+        Panel3.SetActive(false);
+        Panel4.SetActive(false);
+        Panel5.SetActive(false);
+        Panel6.SetActive(false);
+        Panel7.SetActive(false);
+        Panel8.SetActive(false);
+        Panel9.SetActive(false);
+        Panel2.SetActive(true);
+    }
+    public void AB3()
+    {
+        Panel.SetActive(false);
+        Panel1.SetActive(false);
+        Panel2.SetActive(false);
+        Panel4.SetActive(false);
+        Panel5.SetActive(false);
+        Panel6.SetActive(false);
+        Panel7.SetActive(false);
+        Panel8.SetActive(false);
+        Panel9.SetActive(false);
+        Panel3.SetActive(true);
+    }
+    public void AB4()
+    {
+        Panel.SetActive(false);
+        Panel1.SetActive(false);
+        Panel2.SetActive(false);
+        Panel3.SetActive(false);
+        Panel5.SetActive(false);
+        Panel6.SetActive(false);
+        Panel7.SetActive(false);
+        Panel8.SetActive(false);
+        Panel9.SetActive(false);
+        Panel4.SetActive(true);
+    }
+    public void AB5()
+    {
+        Panel.SetActive(false);
+        Panel1.SetActive(false);
+        Panel2.SetActive(false);
+        Panel3.SetActive(false);
+        Panel4.SetActive(false);
+        Panel6.SetActive(false);
+        Panel7.SetActive(false);
+        Panel8.SetActive(false);
+        Panel9.SetActive(false);
+        Panel5.SetActive(true);
+    }
+    public void AB6()
+    {
+        Panel.SetActive(false);
+        Panel1.SetActive(false);
+        Panel2.SetActive(false);
+        Panel3.SetActive(false);
+        Panel4.SetActive(false);
+        Panel5.SetActive(false);
+        Panel7.SetActive(false);
+        Panel8.SetActive(false);
+        Panel9.SetActive(false);
+        Panel6.SetActive(true);
+    }
+    public void AB7()
+    {
+        Panel.SetActive(false);
+        Panel1.SetActive(false);
+        Panel2.SetActive(false);
+        Panel3.SetActive(false);
+        Panel4.SetActive(false);
+        Panel5.SetActive(false);
+        Panel6.SetActive(false);
+        Panel8.SetActive(false);
+        Panel9.SetActive(false);
+        Panel7.SetActive(true);
+    }
+    public void AB8()
+    {
+        Panel.SetActive(false);
+        Panel1.SetActive(false);
+        Panel2.SetActive(false);
+        Panel3.SetActive(false);
+        Panel4.SetActive(false);
+        Panel5.SetActive(false);
+        Panel6.SetActive(false);
+        Panel7.SetActive(false);
+        Panel9.SetActive(false);
+        Panel8.SetActive(true);
+    }
+    public void AB9()
+    {
+        Panel.SetActive(false);
+        Panel1.SetActive(false);
+        Panel2.SetActive(false);
+        Panel3.SetActive(false);
+        Panel4.SetActive(false);
+        Panel5.SetActive(false);
+        Panel6.SetActive(false);
+        Panel7.SetActive(false);
+        Panel8.SetActive(false);
+        Panel9.SetActive(true);
+    }
+
+    ColorBlock colorBlock;
+    public void SelectOnClick()
+    {
+        colorBlock = Select.colors;
+        if (Panel)
         {
-            RingsToggle.isOn = false;
-            BowToggle.isOn = false;
-        }
-        else if (BowToggle.isOn)
-        {
-            ArmorToggle.isOn = false;
-            RingsToggle.isOn = false;
-        }
-        else if (RingsToggle.isOn)
-        {
-            ArmorToggle.isOn = false;
-            BowToggle .isOn = false;
-        }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            if (!InventoryPanel)
+            if (monster.BanditArmorBool)
             {
-                InventoryPanel.SetActive(true);
+                colorBlock.normalColor = Color.green;
+                Select.colors = colorBlock;
             }
             else
             {
-                InventoryPanel.SetActive(false);
+                colorBlock.normalColor = Color.white;
+                Select.colors = colorBlock;
             }
         }
-    }
-    public void ArmorToggleValueChanged()
-    {
-        if (ArmorToggle.isOn)
+        else if (Panel1)
         {
-            ArmorPanel.SetActive(true);
+            if (monster.BanditGlovesBool)
+            {
+                colorBlock.normalColor = Color.green;
+                Select.colors = colorBlock;
+            }
+            else
+            {
+                colorBlock.normalColor = Color.white;
+                Select.colors = colorBlock;
+            }
         }
-        else
+        else if (Panel2)
         {
-            ArmorPanel.SetActive(false);
+            if (monster.BanditBootsBool)
+            {
+                colorBlock.normalColor = Color.green;
+                Select.colors = colorBlock;
+            }
+            else
+            {
+                colorBlock.normalColor = Color.white;
+                Select.colors = colorBlock;
+            }
         }
-    }
-    public void RingsToggleValueChanged()
-    {
-        if (RingsToggle.isOn)
+        else if (Panel3)
         {
-            RingsPanel.SetActive(true);
+            if (monster.BattleGuardHelmBool)
+            {
+                colorBlock.normalColor = Color.green;
+                Select.colors = colorBlock;
+            }
+            else
+            {
+                colorBlock.normalColor = Color.white;
+                Select.colors = colorBlock;
+            }
         }
-        else
+        else if (Panel4)
         {
-            RingsPanel.SetActive(false);
+            if (monster.BattleGuardArmorBool)
+            {
+                colorBlock.normalColor = Color.green;
+                Select.colors = colorBlock;
+            }
+            else
+            {
+                colorBlock.normalColor = Color.white;
+                Select.colors = colorBlock;
+            }
         }
-    }
-    public void BowsToggleValueChanged()
-    {
-        if (BowToggle.isOn)
+        else if (Panel5)
         {
-            BowPanel.SetActive(true);
+            if (monster.BattleGuardGlovesBool)
+            {
+                colorBlock.normalColor = Color.green;
+                Select.colors = colorBlock;
+            }
+            else
+            {
+                colorBlock.normalColor = Color.white;
+                Select.colors = colorBlock;
+            }
         }
-        else
+        else if (Panel6)
         {
-            BowPanel.SetActive(false);
+            if (monster.BattleGuardBootsBool)
+            {
+                colorBlock.normalColor = Color.green;
+                Select.colors = colorBlock;
+            }
+            else
+            {
+                colorBlock.normalColor = Color.white;
+                Select.colors = colorBlock;
+            }
+        }
+        else if (Panel7)
+        {
+            if (monster.GreyKnightArmorBool)
+            {
+                colorBlock.normalColor = Color.green;
+                Select.colors = colorBlock;
+            }
+            else
+            {
+                colorBlock.normalColor = Color.white;
+                Select.colors = colorBlock;
+            }
+        }
+        else if (Panel8)
+        {
+            if (monster.GreyKnightGlovesBool)
+            {
+                colorBlock.normalColor = Color.green;
+                Select.colors = colorBlock;
+            }
+            else
+            {
+                colorBlock.normalColor = Color.white;
+                Select.colors = colorBlock;
+            }
+        }
+        else if (Panel9)
+        {
+            if (monster.GreyKnightBootsBool)
+            {
+                colorBlock.normalColor = Color.green;
+            }
+            else
+            {
+                colorBlock.normalColor = Color.white;
+            }
         }
     }
 }

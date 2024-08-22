@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public int Level;
     public int expForLevelUp;
     public float defaultStatUP = 1;
-
+    InventoryUI inventoryUI;
 
     private void Start()
     {
@@ -68,6 +68,17 @@ public class PlayerController : MonoBehaviour
     
         InputVector2.x = Input.GetAxisRaw("Horizontal");
         InputVector2.y = Input.GetAxisRaw("Vertical");
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (!inventoryUI.InventoryPanel)
+            {
+                inventoryUI.InventoryPanel.SetActive(true);
+            }
+            else
+            {
+                inventoryUI.InventoryPanel.SetActive(false);
+            }
+        }
     }
 
     private void PlayerAttack()

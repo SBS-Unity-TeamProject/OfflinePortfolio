@@ -25,7 +25,10 @@ public class Monster : MonoBehaviour
     GameObject
         BanditGloves, BanditBoots, BanditArmor,
         BattleGuardHelm, BattleGuardGloves, BattleGuardBoots, BattleGuardArmor,
-        GreyKnightGloves, GreyKnightBoots, GreyKnightArmor;
+        GreyKnightGloves, GreyKnightBoots, GreyKnightArmor, SilverRing, GoldRing1, GoldRing2;
+    public bool BanditGlovesBool, BanditBootsBool, BanditArmorBool,
+        BattleGuardHelmBool, BattleGuardGlovesBool, BattleGuardBootsBool, BattleGuardArmorBool,
+        GreyKnightGlovesBool, GreyKnightBootsBool, GreyKnightArmorBool, SilverRingBool, GoldRing1Bool, GoldRing2Bool;
     GameObject newExp;
     GameObject newExpScript;
 
@@ -52,7 +55,19 @@ public class Monster : MonoBehaviour
         spriter = GetComponent<SpriteRenderer>();
         wait = new WaitForFixedUpdate();
     }
-
+    private void Start()
+    {
+        BanditArmorBool = false;
+        BanditGlovesBool = false;
+        BanditBootsBool = false;
+        BattleGuardHelmBool = false;
+        BattleGuardArmorBool = false;
+        BattleGuardGlovesBool = false;
+        BattleGuardBootsBool = false;
+        GreyKnightArmorBool = false;
+        GreyKnightGlovesBool=false;
+        GreyKnightBootsBool = false;
+    }
     private void FixedUpdate()
     {
         if (!isLive)
@@ -201,61 +216,71 @@ public class Monster : MonoBehaviour
         Rand();
         if (ItemCount <= 3)
         {
-            if (r <= 1.65f)
+            if (r <= 3.3f)
             {
                 Instantiate(BanditArmor, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+                BanditArmorBool = true;
                 ItemCount++;
             }
-            else if (r > 1.65f && r <= 3.3f)
+            else if (r > 3.3f && r <= 6.6f)
             {
                 Instantiate(BanditBoots, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 ItemCount++;
+                BanditBootsBool = true;
             }
-            else if (r > 3.3f && r <= 5)
+            else if (r > 6.6f && r <= 10f)
             {
                 Instantiate(BanditGloves, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 ItemCount++;
+                BanditGlovesBool = true;
             }
         }
         else if (ItemCount <= 6 && ItemCount > 3)
         {
-            if (r <= 1.25f)
+            if (r <= 2)
             {
                 Instantiate(BattleGuardArmor, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 ItemCount++;
+                BattleGuardArmorBool = true;
             }
-            else if (r > 1.25f && r <= 2.5f)
+            else if (r > 2 && r <= 5)
             {
                 Instantiate(BattleGuardBoots, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 ItemCount++;
+                BattleGuardBootsBool = true;
             }
-            else if (r > 2.5f && r <= 3.75)
+            else if (r > 5 && r <= 7.5f)
             {
                 Instantiate(BattleGuardGloves, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 ItemCount++;
+                BattleGuardGlovesBool = true;
             }
-            else if (r > 3.75f && r<= 5f)
+            else if (r > 7.5f && r <= 10)
             {
                 Instantiate(BattleGuardHelm, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 ItemCount++;
+                BattleGuardHelmBool = true;
             }
         }
         else if (ItemCount > 6 && ItemCount <= 9)
         {
-            if (r <= 1.65f)
+            if (r <= 3.3)
             {
                 Instantiate(GreyKnightArmor, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 ItemCount++;
+                GreyKnightArmorBool = true;
             }
-            else if (r > 1.65f && r <= 3.3f)
+            else if (r > 3.3 && r <= 6.6)
             {
                 Instantiate(GreyKnightBoots, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 ItemCount++;
+                GreyKnightBootsBool = true;
             }
-            else if (r > 3.3f && r <= 5)
+            else if (r > 6.6 && r <= 10)
             {
                 Instantiate(GreyKnightGloves, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 ItemCount++;
+                GreyKnightGlovesBool = true;
             }
         }
         else
