@@ -164,4 +164,3 @@ MonoBehaviour:
   playerStates: {fileID: 11400000, guid: f268982532e8132438794949230356bc, type: 2}
   damage: 3
   scanner: {fileID: 0}
-  arrowpos: {fileID: 0}
