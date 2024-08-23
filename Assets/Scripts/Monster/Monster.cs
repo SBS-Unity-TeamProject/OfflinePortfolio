@@ -22,7 +22,7 @@ public class Monster : MonoBehaviour
     public bool isBoss = false;
     [SerializeField] GameObject Exp;
     [SerializeField]
-    GameObject
+    public GameObject
         BanditGloves, BanditBoots, BanditArmor,
         BattleGuardHelm, BattleGuardGloves, BattleGuardBoots, BattleGuardArmor,
         GreyKnightGloves, GreyKnightBoots, GreyKnightArmor, SilverRing, GoldRing1, GoldRing2;
@@ -30,6 +30,9 @@ public class Monster : MonoBehaviour
         BattleGuardHelmBool, BattleGuardGlovesBool, BattleGuardBootsBool, BattleGuardArmorBool,
         GreyKnightGlovesBool, GreyKnightBootsBool, GreyKnightArmorBool, SilverRingBool, GoldRing1Bool, GoldRing2Bool;
     GameObject newExp;
+    public bool ABanditGlovesBool, ABanditBootsBool, ABanditArmorBool,
+        ABattleGuardHelmBool, ABattleGuardGlovesBool, ABattleGuardBootsBool, ABattleGuardArmorBool,
+        AGreyKnightGlovesBool, AGreyKnightBootsBool, AGreyKnightArmorBool, ASilverRingBool, AGoldRing1Bool, AGoldRing2Bool;
     GameObject newExpScript;
 
     bool isLive = true;
@@ -219,6 +222,7 @@ public class Monster : MonoBehaviour
             if (r <= 3.3f)
             {
                 Instantiate(BanditArmor, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+                Destroy(BanditArmor, 1.5f);
                 BanditArmorBool = true;
                 ItemCount++;
             }
@@ -226,12 +230,14 @@ public class Monster : MonoBehaviour
             {
                 Instantiate(BanditBoots, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 ItemCount++;
+                Destroy(BanditBoots, 1.5f);
                 BanditBootsBool = true;
             }
             else if (r > 6.6f && r <= 10f)
             {
                 Instantiate(BanditGloves, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 ItemCount++;
+                Destroy(BanditGloves, 1.5f);
                 BanditGlovesBool = true;
             }
         }
@@ -241,24 +247,31 @@ public class Monster : MonoBehaviour
             {
                 Instantiate(BattleGuardArmor, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 ItemCount++;
+                Destroy(BattleGuardArmor , 1.5f);
                 BattleGuardArmorBool = true;
             }
             else if (r > 2 && r <= 5)
             {
                 Instantiate(BattleGuardBoots, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 ItemCount++;
+                Destroy(BattleGuardBoots , 1.5f);
+
                 BattleGuardBootsBool = true;
             }
             else if (r > 5 && r <= 7.5f)
             {
                 Instantiate(BattleGuardGloves, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 ItemCount++;
+                Destroy(BattleGuardGloves , 1.5f);
+
                 BattleGuardGlovesBool = true;
             }
             else if (r > 7.5f && r <= 10)
             {
                 Instantiate(BattleGuardHelm, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 ItemCount++;
+                Destroy( BattleGuardHelm, 1.5f);
+
                 BattleGuardHelmBool = true;
             }
         }
@@ -268,24 +281,23 @@ public class Monster : MonoBehaviour
             {
                 Instantiate(GreyKnightArmor, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 ItemCount++;
+                Destroy(GreyKnightArmor , 1.5f);
                 GreyKnightArmorBool = true;
             }
             else if (r > 3.3 && r <= 6.6)
             {
                 Instantiate(GreyKnightBoots, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 ItemCount++;
+                Destroy( GreyKnightBoots, 1.5f);
                 GreyKnightBootsBool = true;
             }
             else if (r > 6.6 && r <= 10)
             {
                 Instantiate(GreyKnightGloves, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 ItemCount++;
+                Destroy(GreyKnightGloves , 1.5f);
                 GreyKnightGlovesBool = true;
             }
-        }
-        else
-        {
-
         }
     }
 

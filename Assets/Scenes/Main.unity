@@ -516,17 +516,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &378723877 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7651493278662273586, guid: 0125febdb2bd21b43954393743314350, type: 3}
-  m_PrefabInstance: {fileID: 1498974676}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1215241244 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5846504435865533708, guid: 550fd0a4cdcf9ea4cbda488b8078abb7, type: 3}
@@ -703,30 +692,6 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 54199833}
-    - target: {fileID: 1936903563147494703, guid: 0125febdb2bd21b43954393743314350, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1936903563147494703, guid: 0125febdb2bd21b43954393743314350, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1936903563147494703, guid: 0125febdb2bd21b43954393743314350, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1936903563147494703, guid: 0125febdb2bd21b43954393743314350, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 1936903563147494703, guid: 0125febdb2bd21b43954393743314350, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 1936903563147494703, guid: 0125febdb2bd21b43954393743314350, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4879132604895612442, guid: 0125febdb2bd21b43954393743314350, type: 3}
       propertyPath: playerController
       value: 
@@ -735,22 +700,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7651493278662273586, guid: 0125febdb2bd21b43954393743314350, type: 3}
-      propertyPath: m_Colors.m_NormalColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7651493278662273586, guid: 0125febdb2bd21b43954393743314350, type: 3}
-      propertyPath: m_Colors.m_NormalColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7651493278662273586, guid: 0125febdb2bd21b43954393743314350, type: 3}
-      propertyPath: m_Colors.m_NormalColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7668123176127884263, guid: 0125febdb2bd21b43954393743314350, type: 3}
-      propertyPath: Select
-      value: 
-      objectReference: {fileID: 378723877}
     - target: {fileID: 7949910563287215007, guid: 0125febdb2bd21b43954393743314350, type: 3}
       propertyPath: controller
       value: 
@@ -759,10 +708,6 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 54199833}
-    - target: {fileID: 8176189830102095189, guid: 0125febdb2bd21b43954393743314350, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8452181482476488254, guid: 0125febdb2bd21b43954393743314350, type: 3}
       propertyPath: playerController
       value: 

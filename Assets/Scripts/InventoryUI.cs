@@ -23,12 +23,153 @@ public class InventoryUI : MonoBehaviour
     Monster monster;
     private void Start()
     {
+        colorBlock = Select.colors;
         ArmorPanel.SetActive(true);
         RingsPanel.SetActive(false);
         BowPanel.SetActive(false);
     }
-    private void Update()
+    private void LateUpdate()
     {
+        if (Panel)
+        {
+            if (monster.BanditArmorBool)
+            {
+                colorBlock.normalColor = Color.green;
+                Select.colors = colorBlock;
+                selectGameObj = monster.BanditArmor;
+            }
+            else
+            {
+                colorBlock.normalColor = Color.white;
+                Select.colors = colorBlock;
+            }
+        }
+        else if (Panel1)
+        {
+            if (monster.BanditGlovesBool)
+            {
+                colorBlock.normalColor = Color.green;
+                Select.colors = colorBlock;
+                selectGameObj = monster.BanditGloves;
+            }
+            else
+            {
+                colorBlock.normalColor = Color.white;
+                Select.colors = colorBlock;
+            }
+        }
+        else if (Panel2)
+        {
+            if (monster.BanditBootsBool)
+            {
+                colorBlock.normalColor = Color.green;
+                Select.colors = colorBlock;
+                selectGameObj = monster.BanditBoots;
+            }
+            else
+            {
+                colorBlock.normalColor = Color.white;
+                Select.colors = colorBlock;
+            }
+        }
+        else if (Panel3)
+        {
+            if (monster.BattleGuardHelmBool)
+            {
+                colorBlock.normalColor = Color.green;
+                Select.colors = colorBlock;
+                selectGameObj = monster.BattleGuardHelm;
+            }
+            else
+            {
+                colorBlock.normalColor = Color.white;
+                Select.colors = colorBlock;
+            }
+        }
+        else if (Panel4)
+        {
+            if (monster.BattleGuardArmorBool)
+            {
+                colorBlock.normalColor = Color.green;
+                Select.colors = colorBlock;
+                selectGameObj = monster.BattleGuardArmor;
+            }
+            else
+            {
+                colorBlock.normalColor = Color.white;
+                Select.colors = colorBlock;
+            }
+        }
+        else if (Panel5)
+        {
+            if (monster.BattleGuardGlovesBool)
+            {
+                colorBlock.normalColor = Color.green;
+                Select.colors = colorBlock;
+                selectGameObj = monster.BattleGuardGloves;
+            }
+            else
+            {
+                colorBlock.normalColor = Color.white;
+                Select.colors = colorBlock;
+            }
+        }
+        else if (Panel6)
+        {
+            if (monster.BattleGuardBootsBool)
+            {
+                colorBlock.normalColor = Color.green;
+                Select.colors = colorBlock;
+                selectGameObj = monster.BattleGuardBoots;
+            }
+            else
+            {
+                colorBlock.normalColor = Color.white;
+                Select.colors = colorBlock;
+            }
+        }
+        else if (Panel7)
+        {
+            if (monster.GreyKnightArmorBool)
+            {
+                colorBlock.normalColor = Color.green;
+                Select.colors = colorBlock;
+                selectGameObj = monster.GreyKnightArmor;
+            }
+            else
+            {
+                colorBlock.normalColor = Color.white;
+                Select.colors = colorBlock;
+            }
+        }
+        else if (Panel8)
+        {
+            if (monster.GreyKnightGlovesBool)
+            {
+                colorBlock.normalColor = Color.green;
+                Select.colors = colorBlock;
+                selectGameObj = monster.GreyKnightGloves;
+            }
+            else
+            {
+                colorBlock.normalColor = Color.white;
+                Select.colors = colorBlock;
+            }
+        }
+        else if (Panel9)
+        {
+            if (monster.GreyKnightBootsBool)
+            {
+                colorBlock.normalColor = Color.green;
+                Select.colors = colorBlock;
+                selectGameObj = monster.GreyKnightBoots;
+            }
+            else
+            {
+                colorBlock.normalColor = Color.white;
+                Select.colors = colorBlock;
+            }
+        }
     }
     public void ArmorValueChanged()
     {
@@ -180,136 +321,13 @@ public class InventoryUI : MonoBehaviour
     }
 
     ColorBlock colorBlock;
+    GameObject selectGameObj;
     public void SelectOnClick()
     {
-        colorBlock = Select.colors;
-        if (Panel)
+        if (colorBlock.normalColor == Color.green)
         {
-            if (monster.BanditArmorBool)
-            {
-                colorBlock.normalColor = Color.green;
-                Select.colors = colorBlock;
-            }
-            else
-            {
-                colorBlock.normalColor = Color.white;
-                Select.colors = colorBlock;
-            }
+            
         }
-        else if (Panel1)
-        {
-            if (monster.BanditGlovesBool)
-            {
-                colorBlock.normalColor = Color.green;
-                Select.colors = colorBlock;
-            }
-            else
-            {
-                colorBlock.normalColor = Color.white;
-                Select.colors = colorBlock;
-            }
-        }
-        else if (Panel2)
-        {
-            if (monster.BanditBootsBool)
-            {
-                colorBlock.normalColor = Color.green;
-                Select.colors = colorBlock;
-            }
-            else
-            {
-                colorBlock.normalColor = Color.white;
-                Select.colors = colorBlock;
-            }
-        }
-        else if (Panel3)
-        {
-            if (monster.BattleGuardHelmBool)
-            {
-                colorBlock.normalColor = Color.green;
-                Select.colors = colorBlock;
-            }
-            else
-            {
-                colorBlock.normalColor = Color.white;
-                Select.colors = colorBlock;
-            }
-        }
-        else if (Panel4)
-        {
-            if (monster.BattleGuardArmorBool)
-            {
-                colorBlock.normalColor = Color.green;
-                Select.colors = colorBlock;
-            }
-            else
-            {
-                colorBlock.normalColor = Color.white;
-                Select.colors = colorBlock;
-            }
-        }
-        else if (Panel5)
-        {
-            if (monster.BattleGuardGlovesBool)
-            {
-                colorBlock.normalColor = Color.green;
-                Select.colors = colorBlock;
-            }
-            else
-            {
-                colorBlock.normalColor = Color.white;
-                Select.colors = colorBlock;
-            }
-        }
-        else if (Panel6)
-        {
-            if (monster.BattleGuardBootsBool)
-            {
-                colorBlock.normalColor = Color.green;
-                Select.colors = colorBlock;
-            }
-            else
-            {
-                colorBlock.normalColor = Color.white;
-                Select.colors = colorBlock;
-            }
-        }
-        else if (Panel7)
-        {
-            if (monster.GreyKnightArmorBool)
-            {
-                colorBlock.normalColor = Color.green;
-                Select.colors = colorBlock;
-            }
-            else
-            {
-                colorBlock.normalColor = Color.white;
-                Select.colors = colorBlock;
-            }
-        }
-        else if (Panel8)
-        {
-            if (monster.GreyKnightGlovesBool)
-            {
-                colorBlock.normalColor = Color.green;
-                Select.colors = colorBlock;
-            }
-            else
-            {
-                colorBlock.normalColor = Color.white;
-                Select.colors = colorBlock;
-            }
-        }
-        else if (Panel9)
-        {
-            if (monster.GreyKnightBootsBool)
-            {
-                colorBlock.normalColor = Color.green;
-            }
-            else
-            {
-                colorBlock.normalColor = Color.white;
-            }
-        }
+
     }
 }
