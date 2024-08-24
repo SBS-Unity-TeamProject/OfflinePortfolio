@@ -47,14 +47,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GetExp()
-    {
-        exp++;
+    //public void GetExp()
+    //{
+    //    exp++;
 
-        if(exp == nextExp[level])
-        {
-            level++;
-            exp = 0;
-        }
-    }
+    //    if(exp == nextExp[level])
+    //    {
+    //        level++;
+    //        exp = 0;
+    //    }
+    //}
 }

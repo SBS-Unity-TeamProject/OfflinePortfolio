@@ -142,7 +142,7 @@ public class Monster : MonoBehaviour
             spriter.sortingOrder = 1;
             anim.SetBool("Dead", true);
             GameManager.Instance.kill++;
-            GameManager.Instance.GetExp();
+            // GameManager.Instance.GetExp();
         }
     }
 
