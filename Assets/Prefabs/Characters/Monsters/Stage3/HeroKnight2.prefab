@@ -130,6 +130,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
+  health: 0
+  maxHealth: 0
+  animCon: []
   monster: {fileID: 4332004379283449933}
   monsterExp: {fileID: 11400000, guid: 7f63d6d9a18a6c147a36bb0e03586e69, type: 2}
   isBoss: 0
@@ -228,3 +231,4 @@ MonoBehaviour:
   _isAlive: 1
   isInvincible: 0
   invincibilityTime: 0.25
+  playerDeath: 0
