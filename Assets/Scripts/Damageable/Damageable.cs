@@ -120,9 +120,13 @@ public class Damageable : MonoBehaviour
         }
         return false;
     }
-
+    public bool playerDeath = false;
     public void Death()
     {
+        if (CompareTag("Player"))
+        {
+            playerDeath = true;
+        }
         Destroy(gameObject);
     }
 }
