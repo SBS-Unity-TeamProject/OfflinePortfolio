@@ -7,6 +7,7 @@ public class Arrow : MonoBehaviour
 {
     [SerializeField] PlayerStates playerStates;
     public int damage = 10;
+    [SerializeField] Scanner scanner;
     //public WeaponLauncher weaponLauncher;
     //public Transform arrowpos;
     //public Vector2 dir = Vector2.zero;
