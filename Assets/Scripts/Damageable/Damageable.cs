@@ -132,7 +132,7 @@ public class Damageable : MonoBehaviour
         }
         else if (CompareTag("Enemy"))
         {
-            monster.OnDeath();
+            monster.Dead();
         }
     }
 }

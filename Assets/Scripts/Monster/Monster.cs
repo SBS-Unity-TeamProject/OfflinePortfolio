@@ -37,6 +37,7 @@ public class Monster : MonoBehaviour
 
     bool isLive = true;
     Rigidbody2D rigid;
+    Collider2D coll;
     Animator anim;
     SpriteRenderer spriter;
     WaitForFixedUpdate wait;
@@ -55,6 +56,7 @@ public class Monster : MonoBehaviour
 
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        coll = GetComponent<Collider2D>();
         spriter = GetComponent<SpriteRenderer>();
         wait = new WaitForFixedUpdate();
     }
@@ -95,14 +97,18 @@ public class Monster : MonoBehaviour
 
     void OnEnable()
     {
-        //target = GameManager.Instance.player.GetComponent<Rigidbody2D>();
+        target = GameManager.Instance.player.GetComponent<Rigidbody2D>();
         isLive = true;
+        coll.enabled = true;
+        rigid.simulated = true;
+        spriter.sortingOrder = 2;
+        anim.SetBool("Dead", false);
         health = maxHealth;
     }
 
     public void Init(SpawnData data)
     {
-        //anim.runtimeAnimatorController = animCon[data.spriteType];
+        anim.runtimeAnimatorController = animCon[data.spriteType];
         if (!isBoss)
         {
             speed = data.speed;
@@ -117,7 +123,7 @@ public class Monster : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Bullet"))
+        if (!collision.CompareTag("Bullet") || !isLive)
             return;
 
         health -= collision.GetComponent<Bullet>().damage;
@@ -126,6 +132,16 @@ public class Monster : MonoBehaviour
         if(health > 0)
         {
             anim.SetTrigger("Hit");
+        }
+        else 
+        {  
+            isLive = false;
+            coll.enabled = false;
+            rigid.simulated = false;
+            spriter.sortingOrder = 1;
+            anim.SetBool("Dead", true);
+            GameManager.Instance.kill++;
+            GameManager.Instance.GetExp();
         }
     }
 
@@ -138,7 +154,7 @@ public class Monster : MonoBehaviour
     }
 
 
-    public void OnDeath()
+    public void Dead()
     {
         newExp = Instantiate(Exp, transform.position, Quaternion.identity);
         Exp exp = newExp.GetComponent<Exp>();
