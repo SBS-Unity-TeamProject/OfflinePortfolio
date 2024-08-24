@@ -18,7 +18,6 @@ public class WeaponLauncher : MonoBehaviour
     {
         scanner = GetComponent<Scanner>();
     }
-
     void Update()
     {
         //일정 시간후에 발사
