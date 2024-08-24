@@ -21,18 +21,18 @@ public class Monster : MonoBehaviour
 
     public bool isBoss = false;
     [SerializeField] GameObject Exp;
-    [SerializeField]
-    public GameObject
-        BanditGloves, BanditBoots, BanditArmor,
-        BattleGuardHelm, BattleGuardGloves, BattleGuardBoots, BattleGuardArmor,
-        GreyKnightGloves, GreyKnightBoots, GreyKnightArmor, SilverRing, GoldRing1, GoldRing2;
-    public bool BanditGlovesBool, BanditBootsBool, BanditArmorBool,
-        BattleGuardHelmBool, BattleGuardGlovesBool, BattleGuardBootsBool, BattleGuardArmorBool,
-        GreyKnightGlovesBool, GreyKnightBootsBool, GreyKnightArmorBool, SilverRingBool, GoldRing1Bool, GoldRing2Bool;
+    //[SerializeField]
+    //public GameObject
+    //    BanditGloves, BanditBoots, BanditArmor,
+    //    BattleGuardHelm, BattleGuardGloves, BattleGuardBoots, BattleGuardArmor,
+    //    GreyKnightGloves, GreyKnightBoots, GreyKnightArmor, SilverRing, GoldRing1, GoldRing2;
+    //public bool BanditGlovesBool, BanditBootsBool, BanditArmorBool,
+    //    BattleGuardHelmBool, BattleGuardGlovesBool, BattleGuardBootsBool, BattleGuardArmorBool,
+    //    GreyKnightGlovesBool, GreyKnightBootsBool, GreyKnightArmorBool, SilverRingBool, GoldRing1Bool, GoldRing2Bool;
     GameObject newExp;
-    public bool ABanditGlovesBool, ABanditBootsBool, ABanditArmorBool,
-        ABattleGuardHelmBool, ABattleGuardGlovesBool, ABattleGuardBootsBool, ABattleGuardArmorBool,
-        AGreyKnightGlovesBool, AGreyKnightBootsBool, AGreyKnightArmorBool, ASilverRingBool, AGoldRing1Bool, AGoldRing2Bool;
+    //public bool ABanditGlovesBool, ABanditBootsBool, ABanditArmorBool,
+    //    ABattleGuardHelmBool, ABattleGuardGlovesBool, ABattleGuardBootsBool, ABattleGuardArmorBool,
+    //    AGreyKnightGlovesBool, AGreyKnightBootsBool, AGreyKnightArmorBool, ASilverRingBool, AGoldRing1Bool, AGoldRing2Bool;
     GameObject newExpScript;
 
     bool isLive = true;
@@ -60,16 +60,16 @@ public class Monster : MonoBehaviour
     }
     private void Start()
     {
-        BanditArmorBool = false;
-        BanditGlovesBool = false;
-        BanditBootsBool = false;
-        BattleGuardHelmBool = false;
-        BattleGuardArmorBool = false;
-        BattleGuardGlovesBool = false;
-        BattleGuardBootsBool = false;
-        GreyKnightArmorBool = false;
-        GreyKnightGlovesBool=false;
-        GreyKnightBootsBool = false;
+        //BanditArmorBool = false;
+        //BanditGlovesBool = false;
+        //BanditBootsBool = false;
+        //BattleGuardHelmBool = false;
+        //BattleGuardArmorBool = false;
+        //BattleGuardGlovesBool = false;
+        //BattleGuardBootsBool = false;
+        //GreyKnightArmorBool = false;
+        //GreyKnightGlovesBool=false;
+        //GreyKnightBootsBool = false;
     }
     private void FixedUpdate()
     {
@@ -126,11 +126,6 @@ public class Monster : MonoBehaviour
         if(health > 0)
         {
             anim.SetTrigger("Hit");
-        }
-
-        else
-        {
-            OnDeath();
         }
     }
 

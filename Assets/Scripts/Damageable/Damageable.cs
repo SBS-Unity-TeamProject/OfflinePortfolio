@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Damageable : MonoBehaviour
 {
@@ -121,12 +122,17 @@ public class Damageable : MonoBehaviour
         return false;
     }
     public bool playerDeath = false;
+    Monster monster;
     public void Death()
     {
         if (CompareTag("Player"))
         {
             playerDeath = true;
+            SceneManager.LoadScene("GameOverScene");
         }
-        Destroy(gameObject);
+        else if (CompareTag("Enemy"))
+        {
+            monster.OnDeath();
+        }
     }
 }
