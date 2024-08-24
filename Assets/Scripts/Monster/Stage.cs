@@ -12,6 +12,8 @@ public class Stage : MonoBehaviour
     public float timeSinceStart = 0f;
     Vector3 BossSpawnVector;
     Vector3 BossSpawnVectorPlus;
+    public bool GameOver = false;
+    GameObject FinalBoss;
     void Start()
     {
         BossSpawnVectorPlus = new Vector3(0,5,0);
@@ -25,6 +27,10 @@ public class Stage : MonoBehaviour
         if (timerOn)
         {
             timeSinceStart = Time.realtimeSinceStartup;
+        }
+        if (FinalBoss = null)
+        {
+            GameOver = true;
         }
     }
     private void LateUpdate()
@@ -57,7 +63,7 @@ public class Stage : MonoBehaviour
                 Instantiate(Boss2, BossSpawnVector, Quaternion.identity);
                 break;
             case 3:
-                Instantiate(Boss3, BossSpawnVector, Quaternion.identity);
+                FinalBoss = Instantiate(Boss3, BossSpawnVector, Quaternion.identity);
                 break;
         }
     }

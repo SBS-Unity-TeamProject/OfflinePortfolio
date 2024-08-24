@@ -147,7 +147,7 @@ public class Monster : MonoBehaviour
     {
         newExp = Instantiate(Exp, transform.position, Quaternion.identity);
         Exp exp = newExp.GetComponent<Exp>();
-        DropItem();
+        //DropItem();
         //보스는 경험치 5배
         if (monster.name == "FlyingEye")
         {
@@ -213,92 +213,93 @@ public class Monster : MonoBehaviour
     {
         r = Random.Range(0.01f, 100f);
     }
-    private void DropItem()
-    {
-        int ItemCount = 0;
-        Rand();
-        if (ItemCount <= 3)
-        {
-            if (r <= 3.3f)
-            {
-                Instantiate(BanditArmor, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
-                Destroy(BanditArmor, 1.5f);
-                BanditArmorBool = true;
-                ItemCount++;
-            }
-            else if (r > 3.3f && r <= 6.6f)
-            {
-                Instantiate(BanditBoots, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
-                ItemCount++;
-                Destroy(BanditBoots, 1.5f);
-                BanditBootsBool = true;
-            }
-            else if (r > 6.6f && r <= 10f)
-            {
-                Instantiate(BanditGloves, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
-                ItemCount++;
-                Destroy(BanditGloves, 1.5f);
-                BanditGlovesBool = true;
-            }
-        }
-        else if (ItemCount <= 6 && ItemCount > 3)
-        {
-            if (r <= 2)
-            {
-                Instantiate(BattleGuardArmor, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
-                ItemCount++;
-                Destroy(BattleGuardArmor , 1.5f);
-                BattleGuardArmorBool = true;
-            }
-            else if (r > 2 && r <= 5)
-            {
-                Instantiate(BattleGuardBoots, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
-                ItemCount++;
-                Destroy(BattleGuardBoots , 1.5f);
+    //일단 보류
+    //private void DropItem()
+    //{
+    //    int ItemCount = 0;
+    //    Rand();
+    //    if (ItemCount <= 3)
+    //    {
+    //        if (r <= 3.3f)
+    //        {
+    //            Instantiate(BanditArmor, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+    //            Destroy(BanditArmor, 1.5f);
+    //            BanditArmorBool = true;
+    //            ItemCount++;
+    //        }
+    //        else if (r > 3.3f && r <= 6.6f)
+    //        {
+    //            Instantiate(BanditBoots, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+    //            ItemCount++;
+    //            Destroy(BanditBoots, 1.5f);
+    //            BanditBootsBool = true;
+    //        }
+    //        else if (r > 6.6f && r <= 10f)
+    //        {
+    //            Instantiate(BanditGloves, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+    //            ItemCount++;
+    //            Destroy(BanditGloves, 1.5f);
+    //            BanditGlovesBool = true;
+    //        }
+    //    }
+    //    else if (ItemCount <= 6 && ItemCount > 3)
+    //    {
+    //        if (r <= 2)
+    //        {
+    //            Instantiate(BattleGuardArmor, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+    //            ItemCount++;
+    //            Destroy(BattleGuardArmor , 1.5f);
+    //            BattleGuardArmorBool = true;
+    //        }
+    //        else if (r > 2 && r <= 5)
+    //        {
+    //            Instantiate(BattleGuardBoots, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+    //            ItemCount++;
+    //            Destroy(BattleGuardBoots , 1.5f);
 
-                BattleGuardBootsBool = true;
-            }
-            else if (r > 5 && r <= 7.5f)
-            {
-                Instantiate(BattleGuardGloves, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
-                ItemCount++;
-                Destroy(BattleGuardGloves , 1.5f);
+    //            BattleGuardBootsBool = true;
+    //        }
+    //        else if (r > 5 && r <= 7.5f)
+    //        {
+    //            Instantiate(BattleGuardGloves, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+    //            ItemCount++;
+    //            Destroy(BattleGuardGloves , 1.5f);
 
-                BattleGuardGlovesBool = true;
-            }
-            else if (r > 7.5f && r <= 10)
-            {
-                Instantiate(BattleGuardHelm, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
-                ItemCount++;
-                Destroy( BattleGuardHelm, 1.5f);
+    //            BattleGuardGlovesBool = true;
+    //        }
+    //        else if (r > 7.5f && r <= 10)
+    //        {
+    //            Instantiate(BattleGuardHelm, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+    //            ItemCount++;
+    //            Destroy( BattleGuardHelm, 1.5f);
 
-                BattleGuardHelmBool = true;
-            }
-        }
-        else if (ItemCount > 6 && ItemCount <= 9)
-        {
-            if (r <= 3.3)
-            {
-                Instantiate(GreyKnightArmor, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
-                ItemCount++;
-                Destroy(GreyKnightArmor , 1.5f);
-                GreyKnightArmorBool = true;
-            }
-            else if (r > 3.3 && r <= 6.6)
-            {
-                Instantiate(GreyKnightBoots, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
-                ItemCount++;
-                Destroy( GreyKnightBoots, 1.5f);
-                GreyKnightBootsBool = true;
-            }
-            else if (r > 6.6 && r <= 10)
-            {
-                Instantiate(GreyKnightGloves, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
-                ItemCount++;
-                Destroy(GreyKnightGloves , 1.5f);
-                GreyKnightGlovesBool = true;
-            }
-        }
-    }
+    //            BattleGuardHelmBool = true;
+    //        }
+    //    }
+    //    else if (ItemCount > 6 && ItemCount <= 9)
+    //    {
+    //        if (r <= 3.3)
+    //        {
+    //            Instantiate(GreyKnightArmor, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+    //            ItemCount++;
+    //            Destroy(GreyKnightArmor , 1.5f);
+    //            GreyKnightArmorBool = true;
+    //        }
+    //        else if (r > 3.3 && r <= 6.6)
+    //        {
+    //            Instantiate(GreyKnightBoots, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+    //            ItemCount++;
+    //            Destroy( GreyKnightBoots, 1.5f);
+    //            GreyKnightBootsBool = true;
+    //        }
+    //        else if (r > 6.6 && r <= 10)
+    //        {
+    //            Instantiate(GreyKnightGloves, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+    //            ItemCount++;
+    //            Destroy(GreyKnightGloves , 1.5f);
+    //            GreyKnightGlovesBool = true;
+    //        }
+    //    }
+    //}
 
 }
