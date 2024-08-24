@@ -9,15 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5085876808892563188}
-  - component: {fileID: 1226153789069761057}
   - component: {fileID: 8056754219265778996}
   - component: {fileID: 4778336464882830994}
+  - component: {fileID: 8590340930875432618}
   - component: {fileID: 2540886053230155262}
   - component: {fileID: 8928563161663137426}
   - component: {fileID: 5855317303389687260}
-  - component: {fileID: 5347343980730487}
   m_Layer: 3
-  m_Name: FlyingEye
+  m_Name: Boss1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,18 +37,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1226153789069761057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554966187029088722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f83965809f9c0e244b33308cf2d142a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &8056754219265778996
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -129,6 +116,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8590340930875432618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554966187029088722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c05f9e0284c4874b8b6a0a7dd9b0c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageableHit:
+    m_PersistentCalls:
+      m_Calls: []
+  damageableDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  _maxHealth: 30
+  _health: 30
+  _isAlive: 1
+  isInvincible: 0
+  invincibilityTime: 0.25
 --- !u!114 &2540886053230155262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +160,7 @@ MonoBehaviour:
   animCon: []
   monster: {fileID: 554966187029088722}
   monsterExp: {fileID: 11400000, guid: 7f63d6d9a18a6c147a36bb0e03586e69, type: 2}
-  isBoss: 0
+  isBoss: 1
   Exp: {fileID: 1562141443601111899, guid: 29abdb598e5cea843bd5c1aa21906e8a, type: 3}
   BanditGloves: {fileID: 5537209387649340177, guid: 4b060fd07d1583e418ef3c4b3e413b60, type: 3}
   BanditBoots: {fileID: 6722155525886937988, guid: 60a7a7633b414c847a3b07a3bd524342, type: 3}
@@ -215,29 +228,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5347343980730487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554966187029088722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c05f9e0284c4874b8b6a0a7dd9b0c44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageableHit:
-    m_PersistentCalls:
-      m_Calls: []
-  damageableDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  healthChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  _maxHealth: 10
-  _health: 10
-  _isAlive: 1
-  isInvincible: 0
-  invincibilityTime: 0.25

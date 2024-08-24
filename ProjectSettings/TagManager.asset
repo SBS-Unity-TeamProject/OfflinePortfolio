@@ -11,6 +11,7 @@ TagManager:
   - Mob
   - Boss
   - Enemy
+  - Arrow
   layers:
   - Default
   - TransparentFX

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MonsterItemDropScript : MonoBehaviour
 {
-
+    Monster monster;
     void Update()
     {
         

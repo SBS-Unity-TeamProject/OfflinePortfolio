@@ -16,10 +16,11 @@ public class PlayerController : MonoBehaviour
     public int Level;
     public int expForLevelUp;
     public float defaultStatUP = 1;
-
+    //[SerializeField] GameObject InvenPanel;
 
     private void Start()
     {
+        //InvenPanel.SetActive(false);
         Level = 0;
         expForLevelUp = 0;
         playerStates.Strength = 10;
@@ -68,6 +69,17 @@ public class PlayerController : MonoBehaviour
     
         InputVector2.x = Input.GetAxisRaw("Horizontal");
         InputVector2.y = Input.GetAxisRaw("Vertical");
+        //if (Input.GetKeyDown(KeyCode.I))
+        //{
+        //    if (!InvenPanel)
+        //    {
+        //        InvenPanel.SetActive(true);
+        //    }
+        //    else
+        //    {
+        //        InvenPanel.SetActive(false); 
+        //    }
+        //}
     }
 
     private void PlayerAttack()
