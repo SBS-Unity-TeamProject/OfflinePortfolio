@@ -489,12 +489,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8137744484888666699, guid: df90e5bd64e9dc3409299ce42da29dcb, type: 3}
       propertyPath: prefabs.Array.size
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8137744484888666699, guid: df90e5bd64e9dc3409299ce42da29dcb, type: 3}
       propertyPath: prefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 554966187029088722, guid: 69b4b97e998b7274dbac411f6614271c, type: 3}
+      objectReference: {fileID: 3051998868940958214, guid: 464bbcfa9590c8d4e829188056a045b7, type: 3}
     - target: {fileID: 8137744484888666699, guid: df90e5bd64e9dc3409299ce42da29dcb, type: 3}
       propertyPath: prefabs.Array.data[1]
       value: 
