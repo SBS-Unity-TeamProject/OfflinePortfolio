@@ -26,31 +26,21 @@ public class WeaponLauncher : MonoBehaviour
         if(timer > rate)
         {
             timer = 0f;
-            Fire();
+            if (!scanner.nearestTarget)
+            {
+                return;
+            }
+            //arrow.transform.position = arrow.transform.position * speed*Time.deltaTime;
+            //Instantiate(arrow,dir * speed * Time.deltaTime,Quaternion.FromToRotation(Vector3.up, dir));
+            //arrow.transform.Translate(arrow.transform.position * speed * Time.deltaTime);
+            //디버깅 해서 무슨값인지 찾기
+            Vector3 targetPos = scanner.nearestTarget.position;
+            targetPos -= arrowpos.parent.position;
+            Vector3 dir = targetPos - arrowpos.position;
+            dir = dir.normalized;
+            Instantiate(arrow, arrowpos.transform.position, arrowpos.transform.rotation);
         }
+        arrow.transform.TransformVector(arrow.transform.position*Time.deltaTime);
     }
 
-    void Fire()
-    {
-        
-        if (!scanner.nearestTarget)
-        {
-            return;
-        }
-
-        //arrow.transform.position = arrow.transform.position * speed*Time.deltaTime;
-        //Instantiate(arrow,dir * speed * Time.deltaTime,Quaternion.FromToRotation(Vector3.up, dir));
-        //arrow.transform.Translate(arrow.transform.position * speed * Time.deltaTime);
-        //디버깅 해서 무슨값인지 찾기
-        //Debug.Log(arrowpos.position);
-        Vector3 targetPos = scanner.nearestTarget.position;
-        Vector3 dir = targetPos - arrowpos.position;
-        dir = dir.normalized;
-        Instantiate(arrow, arrowpos.transform.position, arrow.transform.rotation);
-        //Vector3 originScale = projectile.transform.localScale;
-
-        //float valuex = scanner.nearestTarget.position.x;
-        //float valuey = scanner.nearestTarget.position.y;
-
-    }
 }

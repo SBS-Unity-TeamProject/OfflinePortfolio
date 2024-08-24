@@ -32,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -142,6 +142,7 @@ MonoBehaviour:
   _isAlive: 1
   isInvincible: 0
   invincibilityTime: 0.25
+  playerDeath: 0
 --- !u!114 &2540886053230155262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,16 +163,6 @@ MonoBehaviour:
   monsterExp: {fileID: 11400000, guid: 7f63d6d9a18a6c147a36bb0e03586e69, type: 2}
   isBoss: 1
   Exp: {fileID: 1562141443601111899, guid: 29abdb598e5cea843bd5c1aa21906e8a, type: 3}
-  BanditGloves: {fileID: 5537209387649340177, guid: 4b060fd07d1583e418ef3c4b3e413b60, type: 3}
-  BanditBoots: {fileID: 6722155525886937988, guid: 60a7a7633b414c847a3b07a3bd524342, type: 3}
-  BanditArmor: {fileID: 1394185540238380401, guid: d15895b6f01a54649847c410ca499a40, type: 3}
-  BattleGuardHelm: {fileID: 3405633899832736684, guid: 3933e5de3ae3f91409c86b86e96d65b2, type: 3}
-  BattleGuardGloves: {fileID: 7842518826030657600, guid: 10d8ab46045cf4e449bf688600612871, type: 3}
-  BattleGuardBoots: {fileID: 4069296970376985498, guid: 90fb5dfb0e0f2ff40999d62efc1f8c08, type: 3}
-  BattleGuardArmor: {fileID: 1725542241204102347, guid: 72162f02e24802844acc67af4b6ab181, type: 3}
-  GreyKnightGloves: {fileID: 1750861041972083171, guid: c6e49fdef09e4254597fd1e63fd36e45, type: 3}
-  GreyKnightBoots: {fileID: 800163380586856599, guid: 5bd501ccf52ff714e96c15880568bbd3, type: 3}
-  GreyKnightArmor: {fileID: 4560479854120830253, guid: 15671bac57659af439e1a67048d8aa1e, type: 3}
 --- !u!70 &8928563161663137426
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
