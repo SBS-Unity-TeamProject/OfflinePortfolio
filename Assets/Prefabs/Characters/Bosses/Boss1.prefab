@@ -137,7 +137,7 @@ MonoBehaviour:
   healthChanged:
     m_PersistentCalls:
       m_Calls: []
-  _maxHealth: 30
+  _maxHealth: 31
   _health: 30
   _isAlive: 1
   isInvincible: 0
@@ -156,13 +156,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
-  health: 0
-  maxHealth: 0
   animCon: []
   monster: {fileID: 554966187029088722}
   monsterExp: {fileID: 11400000, guid: 7f63d6d9a18a6c147a36bb0e03586e69, type: 2}
   isBoss: 1
   Exp: {fileID: 1562141443601111899, guid: 29abdb598e5cea843bd5c1aa21906e8a, type: 3}
+  monsterType: 1
 --- !u!70 &8928563161663137426
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -39,7 +39,7 @@ public class Damageable : MonoBehaviour
             }
             //Lesson 18
             healthChanged.Invoke(_health, MaxHealth);
-
+            animator.SetTrigger("Hit");
             if (_health <= 0)
             {
                 IsAlive = false;
@@ -74,6 +74,7 @@ public class Damageable : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        monster = GetComponent<Monster>();
     }
 
     private void Update()
@@ -96,7 +97,9 @@ public class Damageable : MonoBehaviour
         if (IsAlive && !isInvincible)
         {
             Health -= damage;
+            
             isInvincible = true;
+            Debug.Log(Health);
             return true;
         }
         return false;
@@ -132,6 +135,7 @@ public class Damageable : MonoBehaviour
     Monster monster;
     public void Death()
     {
+
         if (CompareTag("Player"))
         {
             playerDeath = true;
@@ -139,7 +143,12 @@ public class Damageable : MonoBehaviour
         }
         else if (CompareTag("Enemy"))
         {
-            monster.Dead();
+            if (!monster)
+            {
+                monster = GetComponent<Monster>();
+            }
+            if(monster)
+                monster.Dead();
         }
     }
 }

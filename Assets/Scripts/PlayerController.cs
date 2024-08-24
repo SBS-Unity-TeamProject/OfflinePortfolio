@@ -28,8 +28,9 @@ public class PlayerController : MonoBehaviour
         playerStates.MaxHealth = 100;
         playerStates.Armor = 0;
         playerStates.Range = 2f;
-        playerStates.AttackSpeed = 1f;
-}
+        playerStates.AttackSpeed = 10f;
+    }
+
     public void ExpUp(int n)
     {
         currentExp += n;

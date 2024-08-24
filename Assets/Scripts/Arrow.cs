@@ -15,12 +15,18 @@ public class Arrow : MonoBehaviour
     //public Vector2 knockback = Vector2.zero;
     Rigidbody2D rb;
 
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         //playerStates = GetComponent<PlayerStates>();   
     }
 
+    public void MoveDirection(Vector3 Direction)
+    {
+        rb.velocity = Direction.normalized * playerStates.AttackSpeed;
+
+    }
 
     Damageable damageable;
     private void OnTriggerEnter2D(Collider2D collision)
