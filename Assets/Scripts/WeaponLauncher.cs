@@ -7,7 +7,7 @@ public class WeaponLauncher : MonoBehaviour
 {
     [SerializeField] PlayerStates playerStates;
     public int count = 1;
-    public float rate = 0.3f;
+    public float rate = 0.1f;
     public float speed = 1f;
     public Scanner scanner;
     public GameObject arrow;
@@ -35,12 +35,11 @@ public class WeaponLauncher : MonoBehaviour
             //arrow.transform.Translate(arrow.transform.position * speed * Time.deltaTime);
             //디버깅 해서 무슨값인지 찾기
             Vector3 targetPos = scanner.nearestTarget.position;
-            targetPos -= arrowpos.parent.position;
-            Vector3 dir = targetPos - arrowpos.position;
+            Debug.Log(arrowpos.parent.position);
+            Vector3 dir = targetPos - arrowpos.parent.position;
             dir = dir.normalized;
-            Instantiate(arrow, arrowpos.transform.position, arrowpos.transform.rotation);
+            Instantiate(arrow, arrowpos.parent.transform.position, Quaternion.Euler(dir));
         }
-        arrow.transform.TransformVector(arrow.transform.position*Time.deltaTime);
     }
 
 }
