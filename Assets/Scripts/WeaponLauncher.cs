@@ -35,9 +35,9 @@ public class WeaponLauncher : MonoBehaviour
             //arrow.transform.Translate(arrow.transform.position * speed * Time.deltaTime);
             //디버깅 해서 무슨값인지 찾기
             Vector3 targetPos = scanner.nearestTarget.position;
+            targetPos -= arrowpos.parent.position;
             Vector3 dir = targetPos - arrowpos.position;
             dir = dir.normalized;
-            Debug.Log(dir);
             Instantiate(arrow, arrowpos.transform.position, arrowpos.transform.rotation);
         }
         arrow.transform.TransformVector(arrow.transform.position*Time.deltaTime);
