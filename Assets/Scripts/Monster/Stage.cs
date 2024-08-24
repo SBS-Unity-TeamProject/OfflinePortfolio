@@ -8,10 +8,12 @@ public class Stage : MonoBehaviour
     [SerializeField]
     GameObject
         Boss1, Boss2, Boss3;
+    [SerializeField] public GameObject spawner;
     public bool timerOn;
     public float timeSinceStart = 0f;
     Vector3 BossSpawnVector;
     Vector3 BossSpawnVectorPlus;
+    int bossN = 0;
     void Start()
     {
         BossSpawnVectorPlus = new Vector3(0,5,0);
@@ -21,7 +23,7 @@ public class Stage : MonoBehaviour
     }
     void Update()
     {
-        BossSpawnVector += BossSpawnVectorPlus;
+        BossSpawnVector = player.transform.position;
         if (timerOn)
         {
             timeSinceStart = Time.realtimeSinceStartup;
@@ -31,17 +33,26 @@ public class Stage : MonoBehaviour
     {
         if (180 <=timeSinceStart && timeSinceStart < 360)
         {
+            BossSpawnVector += BossSpawnVectorPlus;
             timerOn = false;
+            spawner.SetActive(false);
+            bossN++;
             Boss(1);
         }
         else if (360 <= timeSinceStart && timeSinceStart <540)
         {
+            BossSpawnVector += BossSpawnVectorPlus;
+            spawner.SetActive(false );
             timerOn = false;
+            bossN++;
             Boss(2);
         }
         else if (540 <= timeSinceStart)
         {
+            BossSpawnVector += BossSpawnVectorPlus;
+            spawner.SetActive(false );
             timerOn = false;
+            bossN++;
             Boss(3);
         }
     }
@@ -51,13 +62,22 @@ public class Stage : MonoBehaviour
         {
             default: break;
             case 1:
-                Instantiate(Boss1, BossSpawnVector, Quaternion.identity);
+                if (bossN == 1)
+                {
+                    Instantiate(Boss1, BossSpawnVector, Quaternion.identity);
+                }
                 break;
             case 2:
-                Instantiate(Boss2, BossSpawnVector, Quaternion.identity);
+                if ( bossN == 2)
+                {
+                    Instantiate(Boss2, BossSpawnVector, Quaternion.identity);                    
+                }
                 break;
             case 3:
-                Instantiate(Boss3, BossSpawnVector, Quaternion.identity);
+                if (bossN == 3)
+                {
+                    Instantiate(Boss3, BossSpawnVector, Quaternion.identity);
+                }
                 break;
         }
     }

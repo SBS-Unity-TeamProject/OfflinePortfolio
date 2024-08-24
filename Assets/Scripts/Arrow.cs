@@ -30,10 +30,10 @@ public class Arrow : MonoBehaviour
         rb.velocity = dir;
     }
 
-
+    Damageable damageable;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Damageable damageable = collision.GetComponent<Damageable>();
+        damageable = collision.GetComponent<Damageable>();
         if (damageable != null)
         {
             //Vector2 deliveredKnockback = transform.localScale.x > 0 ? knockback : new Vector2(-knockback.x, -knockback.y);

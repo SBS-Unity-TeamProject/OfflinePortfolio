@@ -267,6 +267,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1610428354940846758, guid: 4b856b6badf548747b10328fe9ac5f9c, type: 3}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 925852623}
+    - target: {fileID: 1610428354940846758, guid: 4b856b6badf548747b10328fe9ac5f9c, type: 3}
+      propertyPath: timeSinceStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2282671566434069467, guid: 4b856b6badf548747b10328fe9ac5f9c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -326,6 +334,11 @@ MonoBehaviour:
 --- !u!4 &590733192 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2282671566434069467, guid: 4b856b6badf548747b10328fe9ac5f9c, type: 3}
+  m_PrefabInstance: {fileID: 590733183}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &925852623 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8965818597835364829, guid: 4b856b6badf548747b10328fe9ac5f9c, type: 3}
   m_PrefabInstance: {fileID: 590733183}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1095833753
