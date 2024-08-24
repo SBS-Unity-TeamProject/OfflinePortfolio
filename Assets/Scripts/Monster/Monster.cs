@@ -151,6 +151,7 @@ public class Monster : MonoBehaviour
             {
                 exp.Init(monsterExp.FlyingEye * 5);
                 stage.timerOn = true;
+                stage.spawner.SetActive(true);
             }
             else { exp.Init(monsterExp.FlyingEye); }
         }
@@ -176,6 +177,7 @@ public class Monster : MonoBehaviour
             {
                 exp.Init(monsterExp.EvilWizard2 * 5);
                 stage.timerOn = true;
+                stage.spawner.SetActive(true);
             }
             else { exp.Init(monsterExp.EvilWizard2); }
         }

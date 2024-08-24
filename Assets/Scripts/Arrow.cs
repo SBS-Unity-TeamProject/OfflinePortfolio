@@ -12,14 +12,31 @@ public class Arrow : MonoBehaviour
     //public Vector2 dir = Vector2.zero;
     //public Vector2 moveSpeed = new Vector2(1f, 1f);
     //public Vector2 knockback = Vector2.zero;
+    Rigidbody2D rb;
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        scanner = GetComponent<Scanner>();
+        //playerStates = GetComponent<PlayerStates>();   
+    }
+
+    private void Start()
+    {
+        Vector3 targetPos = scanner.nearestTarget.position;
+        Vector3 dir = targetPos - transform.position;
+        dir = dir.normalized;
+        rb.velocity = dir;
+    }
+
+    Damageable damageable;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Damageable damageable = collision.GetComponent<Damageable>();
+        damageable = collision.GetComponent<Damageable>();
         if (damageable != null)
         {
             //Vector2 deliveredKnockback = transform.localScale.x > 0 ? knockback : new Vector2(-knockback.x, -knockback.y);
-            //TODO : ÇöÀç °ø°ÝÇÏ´Â Ä³¸¯ÅÍ°¡ ¹Ù¶óº¸´Â ¹æÇâÀ¸·Î vector2 ¼³Á¤
+            //TODO : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ Ä³ï¿½ï¿½ï¿½Í°ï¿½ ï¿½Ù¶óº¸´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ vector2 ï¿½ï¿½ï¿½ï¿½
             if (collision.CompareTag("Enemy"))
             {
                 bool gotHit = damageable.GetHit(damage);
