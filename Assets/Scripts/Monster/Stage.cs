@@ -31,7 +31,7 @@ public class Stage : MonoBehaviour
     }
     private void LateUpdate()
     {
-        if (180 <=timeSinceStart && timeSinceStart < 360)
+        if (90 <=timeSinceStart && timeSinceStart < 180)
         {
             BossSpawnVector += BossSpawnVectorPlus;
             timerOn = false;
@@ -39,7 +39,7 @@ public class Stage : MonoBehaviour
             bossN++;
             Boss(1);
         }
-        else if (360 <= timeSinceStart && timeSinceStart <540)
+        else if (180 <= timeSinceStart && timeSinceStart <360)
         {
             BossSpawnVector += BossSpawnVectorPlus;
             spawner.SetActive(false );
@@ -47,7 +47,7 @@ public class Stage : MonoBehaviour
             bossN++;
             Boss(2);
         }
-        else if (540 <= timeSinceStart)
+        else if (360 <= timeSinceStart)
         {
             BossSpawnVector += BossSpawnVectorPlus;
             spawner.SetActive(false );

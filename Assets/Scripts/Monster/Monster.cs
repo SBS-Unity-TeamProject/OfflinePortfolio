@@ -7,11 +7,15 @@ using UnityEngine.SceneManagement;
 using static Spawner;
 using static UnityEngine.GraphicsBuffer;
 
+public enum EMonsterType
+{
+    Normal,
+    Boss,
+}
+
 public class Monster : MonoBehaviour
 {
     public float speed;
-    public float health;
-    public float maxHealth;
     public RuntimeAnimatorController[] animCon;
     [SerializeField] GameObject monster;
     private Rigidbody2D target;
@@ -43,12 +47,10 @@ public class Monster : MonoBehaviour
     SpriteRenderer spriter;
     WaitForFixedUpdate wait;
     Stage stage;
+    Damageable damageable;
     private float r;
-    private void Update()
-    {
-        
-    }
 
+    [SerializeField] EMonsterType monsterType = EMonsterType.Normal;
 
     void Awake()
     {
@@ -59,21 +61,10 @@ public class Monster : MonoBehaviour
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
         spriter = GetComponent<SpriteRenderer>();
+        damageable = GetComponent<Damageable>();
         wait = new WaitForFixedUpdate();
     }
-    private void Start()
-    {
-        //BanditArmorBool = false;
-        //BanditGlovesBool = false;
-        //BanditBootsBool = false;
-        //BattleGuardHelmBool = false;
-        //BattleGuardArmorBool = false;
-        //BattleGuardGlovesBool = false;
-        //BattleGuardBootsBool = false;
-        //GreyKnightArmorBool = false;
-        //GreyKnightGlovesBool=false;
-        //GreyKnightBootsBool = false;
-    }
+
     private void FixedUpdate()
     {
         if (!isLive)
@@ -104,7 +95,6 @@ public class Monster : MonoBehaviour
         rigid.simulated = true;
         spriter.sortingOrder = 2;
         anim.SetBool("Dead", false);
-        health = maxHealth;
     }
 
     public void Init(SpawnData data)
@@ -118,8 +108,9 @@ public class Monster : MonoBehaviour
         {
             speed = data.speed / 10 * 7;
         }
-        maxHealth = data.health;
-        health = data.health;
+        damageable.Health = data.health;
+        damageable.MaxHealth = data.health;
+        damageable.IsAlive = true;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -127,28 +118,21 @@ public class Monster : MonoBehaviour
         if (!collision.CompareTag("Bullet") || !isLive)
             return;
 
-        health -= collision.GetComponent<Bullet>().damage;
+        Bullet bullet = collision.GetComponent<Bullet>();
+        if (!bullet) 
+            return;
+
         StartCoroutine(KnockBack());
 
-        if(health > 0)
-        {
-            anim.SetTrigger("Hit");
-        }
-        else 
-        {  
-            isLive = false;
-            coll.enabled = false;
-            rigid.simulated = false;
-            spriter.sortingOrder = 1;
-            anim.SetBool("Dead", true);
-            GameManager.Instance.kill++;
-            // GameManager.Instance.GetExp();
-        }
+        int damage = (int)collision.GetComponent<Bullet>().damage;
+
+        damageable.GetHit(damage);
     }
 
     IEnumerator KnockBack()
     {
         yield return wait; // 1프레임 쉬기
+
         Vector3 PlayerPos = GameManager.Instance.player.transform.position;
         Vector3 dirVec = transform.position - PlayerPos;
         rigid.AddForce(dirVec.normalized * 3, ForceMode2D.Impulse);
@@ -161,65 +145,19 @@ public class Monster : MonoBehaviour
         Exp exp = newExp.GetComponent<Exp>();
         //DropItem();
         //보스는 경험치 5배
-        if (monster.name == "FlyingEye")
+        if (monsterType == EMonsterType.Boss)
         {
-            if (isBoss)
-            {
-                exp.Init(monsterExp.FlyingEye * 5);
-                stage.timerOn = true;
-                stage.spawner.SetActive(true);
-            }
-            else { exp.Init(monsterExp.FlyingEye); }
+            SceneManager.LoadScene("GameOverScene");
+            //exp.Init(monsterExp.FlyingEye * 5);
+            //stage.timerOn = true;
+            //stage.spawner.SetActive(true);
         }
-        else if (monster.name == "Goblin")
-        {
-            exp.Init(monsterExp.Goblin);
-        }
-        else if (monster.name == "Mushroom")
-        {
-            exp.Init(monsterExp.Mushroom);
-        }
-        else if (monster.name == "Skeleton")
-        {
-            exp.Init(monsterExp.Skeleton);
-        }
-        else if (monster.name == "EvilWizard1")
-        {
-            exp.Init(monsterExp.EvilWizard1);
-        }
-        else if (monster.name == "EvilWizard2")
-        {
-            if (isBoss)
-            {
-                exp.Init(monsterExp.EvilWizard2 * 5);
-                stage.timerOn = true;
-                stage.spawner.SetActive(true);
-            }
-            else { exp.Init(monsterExp.EvilWizard2); }
-        }
-        else if (monster.name == "EvilWizard3")
+        else
         {
             exp.Init(monsterExp.EvilWizard3);
         }
-        else if (monster.name == "HeroKnight1")
-        {
-            exp.Init(monsterExp.HeroKnight1);
-        }
-        else if (monster.name == "HeroKnight2")
-        {
-            exp.Init(monsterExp.HeroKnight2);
-        }
-        else if (monster.name == "MartialHero")
-        {
-            if (isBoss)
-            {
-                SceneManager.LoadScene("GameOverScene");
-            }
-            else { exp.Init(monsterExp.MartialHero); }
 
-        }
-
-        Destroy(monster);
+        monster.gameObject.SetActive(false);
     }
     SceneManager SceneManager;
     private void Rand()

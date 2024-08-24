@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2250491432623164602}
   - component: {fileID: 9025576425973982624}
   - component: {fileID: 6809240155044652337}
+  - component: {fileID: -564314328115165669}
   m_Layer: 3
   m_Name: EvilWizard1
   m_TagString: Enemy
@@ -129,8 +130,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
-  health: 0
-  maxHealth: 0
   animCon:
   - {fileID: 9100000, guid: 17416659cc086114ba98756fe74c76f2, type: 2}
   - {fileID: 9100000, guid: 4f230fa6acf87ff4aa55a06a9691101d, type: 2}
@@ -214,3 +213,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-564314328115165669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3051998868940958214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c05f9e0284c4874b8b6a0a7dd9b0c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageableHit:
+    m_PersistentCalls:
+      m_Calls: []
+  damageableDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  _maxHealth: 100
+  _health: 100
+  _isAlive: 1
+  isInvincible: 0
+  invincibilityTime: 0.25
+  playerDeath: 0

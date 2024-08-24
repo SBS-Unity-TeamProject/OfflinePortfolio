@@ -15,14 +15,18 @@ public class Ending : MonoBehaviour
     {
         win.SetActive(true);
         lose.SetActive(false);
-        if (damageable.playerDeath)
+        if(damageable)
         {
-            lose.SetActive(true);
+            if (damageable.playerDeath)
+            {
+                lose.SetActive(true);
+            }
+            else if (!damageable.playerDeath)
+            {
+                win.SetActive(true);
+            }
         }
-        else if (!damageable.playerDeath)
-        {
-            win.SetActive(true);
-        }
+
     }
 
     public void StartGame()

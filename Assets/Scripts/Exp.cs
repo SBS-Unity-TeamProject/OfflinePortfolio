@@ -21,10 +21,6 @@ public class Exp : MonoBehaviour
             controller = collision.GetComponent<PlayerController>();
             if (controller)
             {
-                if(ExpAmount == 0)
-                {
-                    Debug.Log("경험치 량이 초기화가 되지 않았습니다.");
-                }
                 controller.ExpUp(ExpAmount);
                 Destroy(gameObject);
             }

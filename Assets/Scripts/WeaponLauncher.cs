@@ -34,10 +34,15 @@ public class WeaponLauncher : MonoBehaviour
             //arrow.transform.Translate(arrow.transform.position * speed * Time.deltaTime);
             //디버깅 해서 무슨값인지 찾기
             Vector3 targetPos = scanner.nearestTarget.position;
-            Debug.Log(arrowpos.parent.position);
             Vector3 dir = targetPos - arrowpos.parent.position;
-            dir = dir.normalized;
-            Instantiate(arrow, arrowpos.parent.transform.position, Quaternion.Euler(dir));
+            Quaternion newRot = Quaternion.AngleAxis(dir.z, Vector3.forward);
+            //Debug.Log(gameObject.name + " : " + newRot);
+            GameObject newArrow = Instantiate(arrow, arrowpos.parent.transform.position, newRot);
+            Arrow arrowComponent = newArrow.GetComponent<Arrow>();
+            if (arrowComponent)
+            {
+                arrowComponent.MoveDirection(dir);
+            }
         }
     }
 
