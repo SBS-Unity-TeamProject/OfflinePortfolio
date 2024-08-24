@@ -1114,35 +1114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62cd72a7c3e468943818a0999355d61c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InventoryPanel: {fileID: 7780100416777217540}
-  InvenLeftPanel: {fileID: 220885355454073624}
-  ArmorPanel: {fileID: 8708310817106381167}
-  RingsPanel: {fileID: 369901624502227275}
-  BowPanel: {fileID: 4370088943534520421}
-  aButton: {fileID: 901109165182469287}
-  rButton: {fileID: 3193641338891211417}
-  bButton: {fileID: 7971399337962320107}
-  ArmorButton: {fileID: 5003374550999899320}
-  ArmorButton1: {fileID: 7931240120477532391}
-  ArmorButton2: {fileID: 7664036329075881043}
-  ArmorButton3: {fileID: 1408103078482504510}
-  ArmorButton4: {fileID: 8529390891211701465}
-  ArmorButton5: {fileID: 7229163860839583631}
-  ArmorButton6: {fileID: 9175191927947128526}
-  ArmorButton7: {fileID: 8225358951290675274}
-  ArmorButton8: {fileID: 2849132545308709972}
-  ArmorButton9: {fileID: 4347615012081247297}
-  Panel: {fileID: 8176189830102095189}
-  Panel1: {fileID: 3626105723221993419}
-  Panel2: {fileID: 3219315440381527515}
-  Panel3: {fileID: 7731933226678216355}
-  Panel4: {fileID: 5959238241663445163}
-  Panel5: {fileID: 3153174891388733334}
-  Panel6: {fileID: 1761766347422066840}
-  Panel7: {fileID: 6608766437146345342}
-  Panel8: {fileID: 3102435051782863479}
-  Panel9: {fileID: 5130088211642986180}
-  Select: {fileID: 7651493278662273586}
 --- !u!1 &1119175307408787097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,7 +1956,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3383054308374916793
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3490,7 +3461,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3660299749928826225}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7668123176127884263}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
+        m_MethodName: SelectOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3102435051782863479
 GameObject:
   m_ObjectHideFlags: 0
@@ -8561,7 +8544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7947867459648849621
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9130,7 +9113,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4328312656436478069
 RectTransform:
   m_ObjectHideFlags: 0
