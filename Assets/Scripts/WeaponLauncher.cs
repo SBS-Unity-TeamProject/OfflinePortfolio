@@ -40,6 +40,7 @@ public class WeaponLauncher : MonoBehaviour
             Debug.Log(dir);
             Instantiate(arrow, arrowpos.transform.position, arrowpos.transform.rotation);
         }
+        arrow.transform.TransformVector(arrow.transform.position*Time.deltaTime);
     }
 
 }
