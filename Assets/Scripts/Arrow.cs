@@ -17,17 +17,9 @@ public class Arrow : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        scanner = GetComponent<Scanner>();
         //playerStates = GetComponent<PlayerStates>();   
     }
 
-    private void Start()
-    {
-        Vector3 targetPos = scanner.nearestTarget.position;
-        Vector3 dir = targetPos - transform.position;
-        dir = dir.normalized;
-        rb.velocity = dir;
-    }
 
     Damageable damageable;
     private void OnTriggerEnter2D(Collider2D collision)
