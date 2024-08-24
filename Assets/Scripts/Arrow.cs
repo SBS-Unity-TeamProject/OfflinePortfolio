@@ -7,29 +7,11 @@ public class Arrow : MonoBehaviour
 {
     [SerializeField] PlayerStates playerStates;
     public int damage = 10;
-    [SerializeField] Scanner scanner;
     //public WeaponLauncher weaponLauncher;
     //public Transform arrowpos;
     //public Vector2 dir = Vector2.zero;
     //public Vector2 moveSpeed = new Vector2(1f, 1f);
     //public Vector2 knockback = Vector2.zero;
-    Rigidbody2D rb;
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        scanner = GetComponent<Scanner>();
-        //playerStates = GetComponent<PlayerStates>();   
-    }
-
-    private void Start()
-    {
-        Vector3 targetPos = scanner.nearestTarget.position;
-        Vector3 dir = targetPos - transform.position;
-        dir = dir.normalized;
-        rb.velocity = dir;
-    }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

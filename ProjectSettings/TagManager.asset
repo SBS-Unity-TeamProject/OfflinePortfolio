@@ -12,6 +12,7 @@ TagManager:
   - Boss
   - Enemy
   - Arrow
+  - Bullet
   layers:
   - Default
   - TransparentFX
