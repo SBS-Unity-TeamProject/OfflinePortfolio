@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         //InvenPanel.SetActive(false);
-        Level = 0;
-        expForLevelUp = 0;
+        Level = 1;
+        expForLevelUp = 20;
         playerStates.Strength = 10;
         playerStates.MoveSpeed = 5;
         playerStates.MaxHealth = 100;
@@ -40,16 +40,11 @@ public class PlayerController : MonoBehaviour
             StatUPWindow.SetActive(true);
             Level++;
 
-
             if (Level > 1)
             {
                 expForLevelUp += i;
                 i += 15;
                 defaultStatUP += 0.5f;
-            }
-            else if (Level == 1)
-            {
-                expForLevelUp = 20;
             }
         }
     }

@@ -27,7 +27,7 @@ public class Ending : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("NoNameGrave");
+        SceneManager.LoadScene("Main");
     }
 
     public void QuitGame()

@@ -9,7 +9,7 @@ public class Damageable : MonoBehaviour
     public UnityEvent<int, Vector2> damageableHit;
     public UnityEvent damageableDeath;
     public UnityEvent<int, int> healthChanged;
-
+    PlayerController playerController;
     Animator animator;
 
     [SerializeField]
@@ -29,7 +29,14 @@ public class Damageable : MonoBehaviour
         get { return _health; }
         set
         {
-            _health = value;
+            if (CompareTag("Player"))
+            {
+                playerController.currentHealth = value;
+            }
+            else
+            {
+                _health = value;
+            }
             //Lesson 18
             healthChanged.Invoke(_health, MaxHealth);
 
