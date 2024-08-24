@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Spawner;
 using static UnityEngine.GraphicsBuffer;
 
@@ -194,8 +195,7 @@ public class Monster : MonoBehaviour
         {
             if (isBoss)
             {
-                exp.Init(monsterExp.MartialHero * 5);
-                stage.timerOn = true;
+                SceneManager.LoadScene("GameOverScene");
             }
             else { exp.Init(monsterExp.MartialHero); }
 
@@ -203,7 +203,7 @@ public class Monster : MonoBehaviour
 
         Destroy(monster);
     }
-
+    SceneManager SceneManager;
     private void Rand()
     {
         r = Random.Range(0.01f, 100f);
