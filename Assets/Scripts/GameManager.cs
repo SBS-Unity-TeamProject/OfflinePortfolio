@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     // 시간에 따른 소환 레벨 ( 20.초 )
     public float gameTime;
-    public float maxGameTime = 1 * 10f;
+    public float maxGameTime = 1 * 5f;
 
     public PoolManager pool;
     public PlayerController player;
